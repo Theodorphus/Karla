@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:karlacleaningcrew.se)",
+      "Bash(bash -c \"npm run dev\")",
+      "Bash(npm run:*)"
+    ]
+  }
+}
