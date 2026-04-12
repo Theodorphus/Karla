@@ -3,7 +3,11 @@
     "allow": [
       "WebFetch(domain:karlacleaningcrew.se)",
       "Bash(bash -c \"npm run dev\")",
-      "Bash(npm run:*)"
+      "Bash(npm run:*)",
+      "Bash(python copy_images.py)",
+      "Bash(python copy_images_optimized.py)",
+      "Bash(pkill -f \"next dev\")",
+      "Read(//tmp/**)"
     ]
   }
 }
