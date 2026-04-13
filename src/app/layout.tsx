@@ -71,7 +71,7 @@ export const metadata: Metadata = {
       'Vi erbjuder professionell städning i Göteborg. Hemstädning, flyttstäd, fönsterputs och mycket mer. RUT-avdrag tillgänglig.',
     images: [
       {
-        url: '/images/home/hero_home.png',
+        url: '/images/home/hero_home2.png',
         width: 1920,
         height: 1080,
         alt: 'Karla Cleaning Crew - Professionell städning',
@@ -85,7 +85,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Karla Cleaning Crew | Städning Göteborg',
     description: 'Professionell städning som du kan lita på. Hemstädning, flyttstäd, fönsterputs och mer.',
-    images: ['/images/home/hero_home.png'],
+    images: ['/images/home/hero_home2.png'],
   },
 
   // Robots & Indexing

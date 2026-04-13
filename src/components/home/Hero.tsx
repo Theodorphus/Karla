@@ -9,7 +9,7 @@ export function Hero() {
     <section className="relative overflow-hidden h-[700px] flex items-center justify-center">
       {/* Background Image */}
       <Image
-        src="/images/home/hero_home.png"
+        src="/images/home/hero_home2.png"
         alt="Karla Cleaning Crew professionell städning"
         fill
         className="object-cover"
