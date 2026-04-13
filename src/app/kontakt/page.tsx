@@ -1,4 +1,6 @@
 import { Metadata } from 'next'
+import { Phone, Mail, MapPin, Clock } from 'lucide-react'
+import { Breadcrumbs } from '@/components/ui/Breadcrumbs'
 import { ContactForm } from '@/components/contact/ContactForm'
 
 export const metadata: Metadata = {
@@ -18,49 +20,66 @@ export const metadata: Metadata = {
 export default function KontaktPage() {
   return (
     <>
+      {/* Breadcrumbs */}
+      <Breadcrumbs
+        items={[
+          { label: 'Startsida', href: '/' },
+          { label: 'Kontakt' },
+        ]}
+      />
+
       {/* Hero */}
-      <section className="bg-gradient-to-r from-brand-green to-green-600 text-white py-16 px-4 sm:px-6 lg:px-8">
+      <section className="bg-gradient-to-b from-brand-green to-brand-green/90 text-white py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-4xl sm:text-5xl font-bold mb-4">Kontakta oss</h1>
-          <p className="text-xl text-green-50">
+          <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold mb-4">Kontakta oss</h1>
+          <p className="text-lg sm:text-xl text-green-50">
             Snabb respons garanterad. Vi svarar inom 24 timmar.
           </p>
         </div>
       </section>
 
       {/* Content */}
-      <div className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+      <div className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-12">
           {/* Contact Information */}
           <div className="lg:col-span-1">
             <h2 className="text-2xl font-bold text-gray-900 mb-8">Kontaktinformation</h2>
 
-            {/* Phone */}
-            <div className="mb-8">
-              <h3 className="font-semibold text-gray-900 mb-2">Telefon</h3>
+            {/* Phone Card */}
+            <div className="mb-8 p-6 bg-gray-50 rounded-xl border border-gray-200 hover:border-brand-green/30 hover:shadow-medium transition-all duration-300">
+              <div className="flex items-start gap-3 mb-3">
+                <Phone size={20} className="text-brand-green flex-shrink-0 mt-1" />
+                <h3 className="font-semibold text-gray-900">Telefon</h3>
+              </div>
               <a
                 href="tel:+46707402080"
-                className="text-brand-green hover:text-green-600 text-lg font-semibold break-all"
+                className="text-brand-green hover:text-green-600 text-lg font-semibold break-all ml-8"
               >
                 +46 707 40 20 80
               </a>
             </div>
 
-            {/* Email */}
-            <div className="mb-8">
-              <h3 className="font-semibold text-gray-900 mb-2">E-post</h3>
+            {/* Email Card */}
+            <div className="mb-8 p-6 bg-gray-50 rounded-xl border border-gray-200 hover:border-brand-green/30 hover:shadow-medium transition-all duration-300">
+              <div className="flex items-start gap-3 mb-3">
+                <Mail size={20} className="text-brand-green flex-shrink-0 mt-1" />
+                <h3 className="font-semibold text-gray-900">E-post</h3>
+              </div>
               <a
                 href="mailto:Info@karlacleaningcrew.se"
-                className="text-brand-green hover:text-green-600 break-all"
+                className="text-brand-green hover:text-green-600 break-all ml-8"
               >
                 Info@karlacleaningcrew.se
               </a>
             </div>
 
-            {/* Address */}
-            <div className="mb-8">
-              <h3 className="font-semibold text-gray-900 mb-2">Adress</h3>
-              <p className="text-gray-600">
+            {/* Address Card */}
+            <div className="mb-8 p-6 bg-gray-50 rounded-xl border border-gray-200 hover:border-brand-green/30 hover:shadow-medium transition-all duration-300">
+              <div className="flex items-start gap-3 mb-3">
+                <MapPin size={20} className="text-brand-green flex-shrink-0 mt-1" />
+                <h3 className="font-semibold text-gray-900">Adress</h3>
+              </div>
+              <p className="text-gray-600 ml-8">
                 Lodjursstråket 1
                 <br />
                 417 51 Göteborg
@@ -69,17 +88,20 @@ export default function KontaktPage() {
               </p>
             </div>
 
-            {/* Hours */}
-            <div className="mb-8">
-              <h3 className="font-semibold text-gray-900 mb-2">Öppet</h3>
-              <div className="space-y-1 text-gray-600">
+            {/* Hours Card */}
+            <div className="mb-8 p-6 bg-gray-50 rounded-xl border border-gray-200 hover:border-brand-green/30 hover:shadow-medium transition-all duration-300">
+              <div className="flex items-start gap-3 mb-3">
+                <Clock size={20} className="text-brand-green flex-shrink-0 mt-1" />
+                <h3 className="font-semibold text-gray-900">Öppet</h3>
+              </div>
+              <div className="space-y-1 text-gray-600 ml-8">
                 <p>Måndag–Fredag: 08:00–17:00</p>
                 <p>Lördag–Söndag: Stängt</p>
               </div>
             </div>
 
             {/* Social */}
-            <div>
+            <div className="p-6 bg-gray-50 rounded-xl border border-gray-200">
               <h3 className="font-semibold text-gray-900 mb-4">Följ oss</h3>
               <div className="flex gap-4">
                 <a

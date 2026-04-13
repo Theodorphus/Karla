@@ -32,17 +32,14 @@ export function CTASection({
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
-            <Button asChild size="lg" className="rounded-full min-w-52 text-base">
-              <Link href="/kontakt">Beställ nu</Link>
-            </Button>
-            <Button
-              variant="outline"
-              size="lg"
-              className="rounded-full min-w-52 text-base"
-              asChild
-            >
-              <a href="tel:+46707402080">Ring oss direkt</a>
-            </Button>
+            <Link href="/kontakt">
+              <Button size="lg" className="rounded-full min-w-52 text-base">
+                Beställ nu
+              </Button>
+            </Link>
+            <a href="tel:+46707402080" className="inline-flex items-center justify-center font-semibold rounded-lg transition-all duration-200 whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 border-2 border-brand-green text-brand-green hover:bg-brand-green/5 active:bg-brand-green/10 focus-visible:ring-brand-green px-8 py-3 text-lg rounded-full min-w-52">
+              Ring oss direkt
+            </a>
           </div>
 
           {/* Divider */}

@@ -1,13 +1,14 @@
 import { Metadata } from 'next'
 import { SectionWrapper } from '@/components/ui/SectionWrapper'
+import { Breadcrumbs } from '@/components/ui/Breadcrumbs'
 import { TEAM } from '@/lib/data/team'
 
 export const metadata: Metadata = {
-  title: 'Om Karla Crew',
+  title: 'Om Karla Cleaning Crew',
   description:
     'Läs om Karla Cleaning Crew - ett erfaret team dedikerat till professionell städning i Göteborg.',
   openGraph: {
-    title: 'Om Karla Crew | Karla Cleaning Crew',
+    title: 'Om Karla Cleaning Crew',
     description: 'Läs om vårt erfarna team och vår mission.',
     url: 'https://karlacleaningcrew.se/om-karla-crew',
   },
@@ -19,6 +20,14 @@ export const metadata: Metadata = {
 export default function OmKarlaCrew() {
   return (
     <>
+      {/* Breadcrumbs */}
+      <Breadcrumbs
+        items={[
+          { label: 'Startsida', href: '/' },
+          { label: 'Om oss' },
+        ]}
+      />
+
       {/* Hero */}
       <section className="bg-gradient-to-r from-brand-green to-green-600 text-white py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
@@ -100,16 +109,16 @@ export default function OmKarlaCrew() {
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {TEAM.map((member) => (
-              <div key={member.name} className="text-center bg-gray-50 p-8 rounded-lg">
-                <div className="bg-brand-green text-white w-20 h-20 rounded-full mx-auto mb-4 flex items-center justify-center text-2xl font-bold">
+              <div key={member.name} className="text-center bg-white p-8 rounded-2xl border border-gray-200 hover:border-brand-green/50 hover:shadow-lg transition-all duration-300">
+                <div className="bg-brand-green text-white w-24 h-24 rounded-full mx-auto mb-5 flex items-center justify-center text-3xl font-bold shadow-md">
                   {member.name.charAt(0)}
                 </div>
-                <h3 className="text-lg font-bold text-gray-900 mb-1">{member.name}</h3>
-                <p className="text-brand-green font-semibold mb-4">{member.role}</p>
+                <h3 className="text-xl font-bold text-gray-900 mb-2">{member.name}</h3>
+                <p className="text-brand-green font-bold mb-4 text-base">{member.role}</p>
                 {member.phone && (
                   <a
                     href={`tel:${member.phone}`}
-                    className="text-gray-600 hover:text-brand-green transition-colors font-medium"
+                    className="text-gray-700 hover:text-brand-green transition-colors font-semibold text-lg"
                   >
                     {member.phone}
                   </a>
@@ -121,40 +130,40 @@ export default function OmKarlaCrew() {
       </SectionWrapper>
 
       {/* Why Choose Us */}
-      <section className="bg-gray-50 py-16 px-4 sm:px-6 lg:px-8">
+      <section className="bg-white py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
+          <h2 className="text-4xl font-bold text-gray-900 mb-12 text-center">
             Varför välja Karla Cleaning Crew?
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="bg-white p-8 rounded-lg shadow-subtle">
-              <div className="text-3xl mb-4">⭐</div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">10+ år erfarenhet</h3>
-              <p className="text-gray-600">
+            <div className="bg-gradient-to-br from-amber-50 to-yellow-50 p-8 rounded-2xl border border-yellow-200 hover:shadow-lg transition-all duration-300">
+              <div className="text-5xl mb-4">⭐</div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-3">10+ år erfarenhet</h3>
+              <p className="text-gray-700 text-base leading-relaxed">
                 Vi vet vad vi gör. Över ett decennium av städning i Göteborg och omgivning
                 har gjort oss till experter på allt från hemstädning till stora byggprojekt.
               </p>
             </div>
-            <div className="bg-white p-8 rounded-lg shadow-subtle">
-              <div className="text-3xl mb-4">🎯</div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Skräddarsydd service</h3>
-              <p className="text-gray-600">
+            <div className="bg-gradient-to-br from-blue-50 to-cyan-50 p-8 rounded-2xl border border-blue-200 hover:shadow-lg transition-all duration-300">
+              <div className="text-5xl mb-4">🎯</div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-3">Skräddarsydd service</h3>
+              <p className="text-gray-700 text-base leading-relaxed">
                 Vi lyssnar på dina behov och anpassar städningen helt efter dina önskemål.
                 En storlek passar inte alla – och det förstår vi.
               </p>
             </div>
-            <div className="bg-white p-8 rounded-lg shadow-subtle">
-              <div className="text-3xl mb-4">💚</div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Miljövänligt alltid</h3>
-              <p className="text-gray-600">
+            <div className="bg-gradient-to-br from-green-50 to-emerald-50 p-8 rounded-2xl border border-green-200 hover:shadow-lg transition-all duration-300">
+              <div className="text-5xl mb-4">💚</div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-3">Miljövänligt alltid</h3>
+              <p className="text-gray-700 text-base leading-relaxed">
                 Vi använder endast miljövänliga produkter och hållbara metoder.
                 Din hälsa och miljön är viktiga för oss.
               </p>
             </div>
-            <div className="bg-white p-8 rounded-lg shadow-subtle">
-              <div className="text-3xl mb-4">🛡️</div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Garanti & försäkring</h3>
-              <p className="text-gray-600">
+            <div className="bg-gradient-to-br from-purple-50 to-pink-50 p-8 rounded-2xl border border-purple-200 hover:shadow-lg transition-all duration-300">
+              <div className="text-5xl mb-4">🛡️</div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-3">Garanti & försäkring</h3>
+              <p className="text-gray-700 text-base leading-relaxed">
                 Städgaranti på alla uppdrag. Vi är fullt försäkrade.
                 Du kan vila säker på att du får exakt det du betalar för.
               </p>

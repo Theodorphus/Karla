@@ -1,74 +1,79 @@
-interface WhatIncludedSectionProps {
-  items: string[]
+/**
+ * WHAT'S INCLUDED SECTION
+ *
+ * Displays all services included in a package
+ * Shows with checkmark icon, title, and optional description
+ *
+ * Supports both simple strings and structured data:
+ * - Simple: items={["Dammsugning", "Putsning"]}
+ * - Complex: items={[{ title: "...", icon: "..." }]}
+ */
+
+import { CheckCircle } from 'lucide-react'
+
+interface IncludedItem {
+  title: string
+  icon?: React.ReactNode
+  description?: string
 }
 
-const serviceIcons = [
-  {
-    name: 'Städning',
-    icon: '🧹',
-  },
-  {
-    name: 'Putsning',
-    icon: '✨',
-  },
-  {
-    name: 'Köksrengöring',
-    icon: '🍳',
-  },
-  {
-    name: 'Badrum',
-    icon: '🚿',
-  },
-  {
-    name: 'Sophantering',
-    icon: '♻️',
-  },
-  {
-    name: 'Förbrukningsvaror',
-    icon: '📦',
-  },
-]
+interface WhatIncludedSectionProps {
+  items: (string | IncludedItem)[]
+  title?: string
+  subtitle?: string
+}
 
-export function WhatIncludedSection({ items }: WhatIncludedSectionProps) {
+export function WhatIncludedSection({
+  items,
+  title = 'Vad ingår i tjänsten?',
+  subtitle,
+}: WhatIncludedSectionProps) {
+  // Normalize items to object format
+  const normalizedItems = items.map((item) => {
+    if (typeof item === 'string') {
+      return { title: item, icon: <CheckCircle size={24} className="text-brand-green" strokeWidth={2.5} /> }
+    }
+    return { icon: <CheckCircle size={24} className="text-brand-green" strokeWidth={2.5} />, ...item }
+  })
+
   return (
-    <section className="bg-white py-section-lg px-section-sm">
+    <section className="py-24 px-4 sm:px-6 lg:px-8 bg-white">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">
-            Vad ingår i vår tjänst?
+        <div className="text-center mb-20">
+          <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4 tracking-tight">
+            {title}
           </h2>
-          <p className="text-xl text-gray-600">
-            Allt som behövs för ett rent, fräscht och välorganiserat arbetskontor
-          </p>
+          {subtitle && (
+            <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto">
+              {subtitle}
+            </p>
+          )}
         </div>
 
-        {/* Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {items.map((item, index) => (
+        {/* Grid: 2-column on mobile, 3-column on desktop */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {normalizedItems.map((item, index) => (
             <div
               key={index}
-              className="group p-8 bg-white rounded-card border-2 border-transparent hover:border-brand-green hover:shadow-medium transition-all duration-300 transform hover:-translate-y-1"
+              className="group flex gap-4 p-6 bg-gray-50 rounded-xl hover:bg-brand-green/5 border border-transparent hover:border-brand-green/30 transition-all duration-300"
             >
-              {/* Icon container */}
-              <div className="mb-6 inline-block p-3 bg-brand-green-lighter rounded-full group-hover:bg-brand-green group-hover:text-white transition-all duration-300">
-                <div className="text-3xl">
-                  {serviceIcons[index % serviceIcons.length].icon}
-                </div>
+              {/* Icon */}
+              <div className="flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                {item.icon}
               </div>
 
               {/* Content */}
-              <h3 className="text-lg font-bold text-gray-900 mb-3 group-hover:text-brand-green transition-colors">
-                {item.split('\n')[0]}
-              </h3>
-              {item.includes('\n') && (
-                <p className="text-sm text-gray-600 leading-relaxed">
-                  {item.split('\n')[1]}
-                </p>
-              )}
-
-              {/* Bottom accent line */}
-              <div className="h-1 w-12 bg-brand-green mt-4 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300" />
+              <div className="flex-grow">
+                <h3 className="font-semibold text-gray-900 mb-1 group-hover:text-brand-green transition-colors">
+                  {item.title}
+                </h3>
+                {item.description && (
+                  <p className="text-sm text-gray-600 leading-relaxed">
+                    {item.description}
+                  </p>
+                )}
+              </div>
             </div>
           ))}
         </div>

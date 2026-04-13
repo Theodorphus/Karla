@@ -1,23 +1,24 @@
 import { Metadata } from 'next'
 import { ServicePageTemplate } from '@/components/services/ServicePageTemplate'
+import { ServiceStructuredData } from '@/components/seo/ServiceStructuredData'
 import { getServiceBySlug } from '@/lib/data/services'
+import { generateServiceMetadata } from '@/lib/utils/seo'
 
-export const metadata: Metadata = {
-  title: 'Byggstäd Göteborg | ID-06 Certifierad | Efter Renovering & Nybygge',
+export const metadata: Metadata = generateServiceMetadata({
+  title: 'Byggstäd',
   description:
-    'Byggstäd efter renovering och nybygge i Göteborg. ID-06 certifierade städare för professionell hantering av byggsmutsa.',
-  openGraph: {
-    title: 'Byggstäd Göteborg | Karla Cleaning Crew',
-    description: 'ID-06 certifierad byggstäd. Professionell hantering av byggsmutsa och målningsrester.',
-    url: 'https://karlacleaningcrew.se/byggstad',
-  },
-  alternates: {
-    canonical: 'https://karlacleaningcrew.se/byggstad',
-  },
-}
+    'ID-06 certifierad byggstäd i Göteborg efter renovering och nybygge. Professionell hantering av byggsmutsa, miljöcertifierad, garanterad resultat.',
+  slug: 'byggstad',
+  imageSrc: '/images/services/byggstad_hero.png',
+})
 
 export default function BygstadPage() {
   const service = getServiceBySlug('byggstad')
   if (!service) return <div>Tjänsten hittades inte</div>
-  return <ServicePageTemplate service={service} />
+  return (
+    <>
+      <ServiceStructuredData service={service} slug="byggstad" />
+      <ServicePageTemplate service={service} />
+    </>
+  )
 }

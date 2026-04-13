@@ -21,7 +21,21 @@ export const SERVICES: ServiceData[] = [
     ],
     rutEligible: true,
     ecoFriendly: true,
-    imageSrc: '/images/services/hemstadning.jpg',
+    imageSrc: '/images/services/hemstadning_hero.png',
+    keyPoints: [
+      {
+        title: 'RUT-avdrag',
+        description: 'Spara upp till 50% på städningen med RUT-avdraget.',
+      },
+      {
+        title: 'Miljövänligt',
+        description: 'Endast certifierade miljöprodukter – säkra för barn och djur.',
+      },
+      {
+        title: 'Samma person',
+        description: 'Vi erbjuder att samma städare kommer varje gång om du föredrar det.',
+      },
+    ],
     faq: [
       {
         question: 'Hur ofta rekommenderar ni hemstädning?',
@@ -67,7 +81,21 @@ export const SERVICES: ServiceData[] = [
     ],
     rutEligible: false,
     ecoFriendly: true,
-    imageSrc: '/images/services/flyttstad.jpg',
+    imageSrc: '/images/services/flyttstad_hero.png',
+    keyPoints: [
+      {
+        title: 'Mäklarsamfundets standard',
+        description: 'Vi följer officiella riktlinjer för perfekt städstandardard.',
+      },
+      {
+        title: 'Städgaranti',
+        description: 'Om något inte är nöjaktigt, fixar vi det utan extra kostnad.',
+      },
+      {
+        title: 'Snabb service',
+        description: 'Vi kan ofta komma inom några dagar – brådskande? Vi löser det!',
+      },
+    ],
     faq: [
       {
         question: 'Följer ni Mäklarsamfundets officiella riktlinjer?',
@@ -113,7 +141,21 @@ export const SERVICES: ServiceData[] = [
     ],
     rutEligible: true,
     ecoFriendly: true,
-    imageSrc: '/images/services/fonsterputs.jpg',
+    imageSrc: '/images/services/fonsterputs_hero.png',
+    keyPoints: [
+      {
+        title: 'In- och utsida',
+        description: 'Vi putsar både insidan och utsidan för full glans.',
+      },
+      {
+        title: 'RUT-avdrag',
+        description: 'Fönsterputs kvalificerar ofta för RUT-avdrag – spara pengar!',
+      },
+      {
+        title: 'Miljövänliga produkter',
+        description: 'Kemikalifria, biologiskt nedbrytbara lösningar.',
+      },
+    ],
     faq: [
       {
         question: 'Hur ofta bör jag få fönstren putsa?',
@@ -158,7 +200,21 @@ export const SERVICES: ServiceData[] = [
     ],
     rutEligible: false,
     ecoFriendly: false,
-    imageSrc: '/images/services/byggstad.jpg',
+    imageSrc: '/images/services/byggstad_hero.png',
+    keyPoints: [
+      {
+        title: 'ID-06 certifierad',
+        description: 'Officiell svensk certifiering för byggrengöring.',
+      },
+      {
+        title: 'Specialutrustning',
+        description: 'Vi har professionell utrustning för alla typer av byggsmutsa.',
+      },
+      {
+        title: 'Garanterad resultat',
+        description: 'Ditt projekt är helt rent och klart för användning.',
+      },
+    ],
     faq: [
       {
         question: 'Vad är ID-06 certifiering?',
@@ -208,7 +264,21 @@ export const SERVICES: ServiceData[] = [
     ],
     rutEligible: false,
     ecoFriendly: true,
-    imageSrc: '/images/services/kontorsstadning.jpg',
+    imageSrc: '/images/services/kontorsstadning_hero.png',
+    keyPoints: [
+      {
+        title: 'Fast kontaktperson',
+        description: 'Samma person är ansvarig för ditt kontor alltid.',
+      },
+      {
+        title: 'Anpassad städplan',
+        description: 'Vi skapar en skräddarsydd checklista för era behov.',
+      },
+      {
+        title: 'Flexibel schemaläggning',
+        description: 'Städning utanför arbetstimmar – vi löser det!',
+      },
+    ],
     faq: [
       {
         question: 'Kan ni städa utanför arbetstimmar?',
@@ -258,7 +328,21 @@ export const SERVICES: ServiceData[] = [
     ],
     rutEligible: false,
     ecoFriendly: true,
-    imageSrc: '/images/services/lokalvard.jpg',
+    imageSrc: '/images/services/lokalvard_hero.png',
+    keyPoints: [
+      {
+        title: 'Större lokaler',
+        description: 'Vi specialiserar oss på skolor, sjukhus och större ytor.',
+      },
+      {
+        title: 'Höga standarder',
+        description: 'Vi förstår hygien- och säkerhetskrav för alla miljöer.',
+      },
+      {
+        title: 'Regelbundna service',
+        description: 'Daglig drift eller djuprengöring – vi anpassar oss.',
+      },
+    ],
     faq: [
       {
         question: 'Vad är skillnaden mellan kontorsstädning och lokalvård?',

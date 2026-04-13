@@ -9,7 +9,7 @@ export interface NavDropdownItem extends NavItem {
 
 export const MAIN_NAV: NavItem[] = [
   { label: 'Hem', href: '/' },
-  { label: 'Om Karla Crew', href: '/om-karla-crew' },
+  { label: 'Om Karla Cleaning Crew', href: '/om-karla-crew' },
   { label: 'Kontakt', href: '/kontakt' },
 ]
 

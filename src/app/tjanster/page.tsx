@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { Card } from '@/components/ui/Card'
 import { Badge } from '@/components/ui/Badge'
 import { SectionWrapper } from '@/components/ui/SectionWrapper'
+import { Breadcrumbs } from '@/components/ui/Breadcrumbs'
 import { SERVICES } from '@/lib/data/services'
 
 export const metadata: Metadata = {
@@ -22,6 +23,14 @@ export const metadata: Metadata = {
 export default function TjansterPage() {
   return (
     <>
+      {/* Breadcrumbs */}
+      <Breadcrumbs
+        items={[
+          { label: 'Startsida', href: '/' },
+          { label: 'Tjänster' },
+        ]}
+      />
+
       {/* Hero */}
       <section className="bg-gradient-to-r from-brand-green to-green-600 text-white py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
@@ -37,11 +46,11 @@ export default function TjansterPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {SERVICES.map((service) => (
             <Link key={service.slug} href={`/${service.slug}`}>
-              <Card className="h-full hover:shadow-xl transition-shadow cursor-pointer">
-                <h2 className="text-2xl font-bold text-gray-900 mb-3">
+              <Card className="h-full hover:shadow-2xl hover:border-brand-green/40 transition-all duration-300 cursor-pointer">
+                <h2 className="text-3xl font-bold text-gray-900 mb-4">
                   {service.title}
                 </h2>
-                <p className="text-gray-600 mb-4 line-clamp-4">
+                <p className="text-gray-700 mb-5 line-clamp-3 text-base leading-relaxed">
                   {service.description}
                 </p>
 

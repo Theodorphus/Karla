@@ -3,6 +3,11 @@ export interface FAQ {
   answer: string
 }
 
+export interface KeyPoint {
+  title: string
+  description: string
+}
+
 export interface ServiceData {
   slug: string
   title: string
@@ -14,5 +19,6 @@ export interface ServiceData {
   rutEligible: boolean
   ecoFriendly: boolean
   imageSrc: string
+  keyPoints?: KeyPoint[]
   faq?: FAQ[]
 }

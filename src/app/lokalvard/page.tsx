@@ -1,23 +1,24 @@
 import { Metadata } from 'next'
 import { ServicePageTemplate } from '@/components/services/ServicePageTemplate'
+import { ServiceStructuredData } from '@/components/seo/ServiceStructuredData'
 import { getServiceBySlug } from '@/lib/data/services'
+import { generateServiceMetadata } from '@/lib/utils/seo'
 
-export const metadata: Metadata = {
-  title: 'Lokalvård Göteborg | Skolor, Sjukhus, Kontor & Butiker',
+export const metadata: Metadata = generateServiceMetadata({
+  title: 'Lokalvård',
   description:
-    'Lokalvård för kontor, skolor, sjukhus och offentliga miljöer i Göteborg. Professionell, miljövänlig & skräddarsydd.',
-  openGraph: {
-    title: 'Lokalvård Göteborg | Karla Cleaning Crew',
-    description: 'Lokalvård för stora lokaler. Skolor, sjukhus, kontor och butiker. Professionell service.',
-    url: 'https://karlacleaningcrew.se/lokalvard',
-  },
-  alternates: {
-    canonical: 'https://karlacleaningcrew.se/lokalvard',
-  },
-}
+    'Lokalvård för stora lokaler i Göteborg - skolor, sjukhus, kontor, butiker. Högsta hygienstandard, miljövänlig, skräddarsydd service.',
+  slug: 'lokalvard',
+  imageSrc: '/images/services/lokalvard_hero.png',
+})
 
 export default function LokalvardPage() {
   const service = getServiceBySlug('lokalvard')
   if (!service) return <div>Tjänsten hittades inte</div>
-  return <ServicePageTemplate service={service} />
+  return (
+    <>
+      <ServiceStructuredData service={service} slug="lokalvard" />
+      <ServicePageTemplate service={service} />
+    </>
+  )
 }

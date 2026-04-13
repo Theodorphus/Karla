@@ -25,11 +25,12 @@ dist/
 .DS_Store
 Thumbs.db
 
-# Generated images
+# Generated images (men spåra loggan)
 output/
 *.png
 *.jpg
 *.jpeg
+!public/images/logo.png
 
 # Python
 __pycache__/

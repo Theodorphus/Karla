@@ -1,20 +1,18 @@
-import Image from 'next/image'
-
 export function BenefitsSection() {
   const benefits = [
     {
       id: 1,
       title: 'Premium kvalité',
       description: 'Vi levererar städning av högsta klass med miljövänliga produkter och precis arbetsutförande.',
-      image: '/images/generated/startsida_kvalitet.png',
       icon: '⭐',
+      gradient: 'from-amber-100 to-yellow-50',
     },
     {
       id: 2,
       title: 'Miljövänligt & Hållbart',
       description: 'Vi bryr oss om miljön. Miljövänliga produkter och hållbara metoder i all vår verksamhet.',
-      image: '/images/generated/startsida_hemstadning.png',
       icon: '🌱',
+      gradient: 'from-green-100 to-emerald-50',
     },
   ]
 
@@ -23,15 +21,14 @@ export function BenefitsSection() {
       <div className="max-w-7xl mx-auto">
         {/* First Benefit */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-24">
-          {/* Image */}
-          <div className="relative h-96 lg:h-[450px] overflow-hidden rounded-xl shadow-medium">
-            <Image
-              src={benefits[0].image}
-              alt={benefits[0].title}
-              fill
-              className="object-cover"
-              sizes="(max-width: 1024px) 100vw, 50vw"
-            />
+          {/* Visual - CSS Gradient */}
+          <div className={`relative h-96 lg:h-[450px] overflow-hidden rounded-xl shadow-medium bg-gradient-to-br ${benefits[0].gradient}`}>
+            <div className="absolute inset-0 flex items-center justify-center">
+              <div className="text-center">
+                <div className="text-9xl mb-4 drop-shadow-lg">{benefits[0].icon}</div>
+                <p className="text-gray-600 font-semibold">Premium Rengöring</p>
+              </div>
+            </div>
           </div>
 
           {/* Content */}
@@ -67,15 +64,14 @@ export function BenefitsSection() {
             </div>
           </div>
 
-          {/* Image */}
-          <div className="relative h-96 lg:h-[450px] overflow-hidden rounded-xl shadow-medium order-1 lg:order-2">
-            <Image
-              src={benefits[1].image}
-              alt={benefits[1].title}
-              fill
-              className="object-cover"
-              sizes="(max-width: 1024px) 100vw, 50vw"
-            />
+          {/* Visual - CSS Gradient */}
+          <div className={`relative h-96 lg:h-[450px] overflow-hidden rounded-xl shadow-medium bg-gradient-to-br ${benefits[1].gradient} order-1 lg:order-2`}>
+            <div className="absolute inset-0 flex items-center justify-center">
+              <div className="text-center">
+                <div className="text-9xl mb-4 drop-shadow-lg">{benefits[1].icon}</div>
+                <p className="text-gray-600 font-semibold">Miljövänlig Städning</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>

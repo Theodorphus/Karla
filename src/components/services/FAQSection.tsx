@@ -1,92 +1,80 @@
 'use client'
 
-import { useState } from 'react'
+import Link from 'next/link'
+import { Button } from '@/components/ui/Button'
+import {
+  Accordion,
+  AccordionItem,
+  AccordionTrigger,
+  AccordionContent,
+} from '@/components/ui/Accordion'
 import { FAQ } from '@/types/service'
 
 interface FAQSectionProps {
   faqItems?: FAQ[]
+  title?: string
+  subtitle?: string
 }
 
-export function FAQSection({ faqItems = [] }: FAQSectionProps) {
-  const [openIndex, setOpenIndex] = useState<number | null>(null)
-
+/**
+ * FAQ SECTION — Using Accordion component from Sprint 1
+ *
+ * Displays frequently asked questions in an accordion
+ * with smooth animations and premium styling
+ */
+export function FAQSection({
+  faqItems = [],
+  title = 'Vanliga frågor',
+  subtitle,
+}: FAQSectionProps) {
   if (!faqItems || faqItems.length === 0) {
     return null
   }
 
-  const toggleAccordion = (index: number) => {
-    setOpenIndex(openIndex === index ? null : index)
-  }
-
   return (
-    <section className="bg-white py-section-lg px-section-sm border-t border-gray-200">
-      <div className="max-w-4xl mx-auto">
-        <h2 className="text-4xl font-bold text-gray-900 mb-4 text-center">
-          Vanliga frågor
-        </h2>
-        <p className="text-xl text-gray-600 text-center mb-12 max-w-2xl mx-auto">
-          Här svarar vi på de frågor vi oftast får. Kontakta oss gärna om du har fler frågor.
-        </p>
-
-        <div className="space-y-4">
-          {faqItems.map((item, index) => (
-            <div
-              key={index}
-              className="border border-gray-200 rounded-lg overflow-hidden hover:border-brand-green transition-colors duration-200"
-            >
-              <button
-                onClick={() => toggleAccordion(index)}
-                className="w-full px-6 py-4 text-left bg-white hover:bg-gray-50 transition-colors duration-200 flex items-center justify-between"
-              >
-                <h3 className="text-lg font-semibold text-gray-900 flex-1 pr-4">
-                  {item.question}
-                </h3>
-                <div
-                  className={`flex-shrink-0 text-brand-green transition-transform duration-200 ${
-                    openIndex === index ? 'rotate-180' : ''
-                  }`}
-                >
-                  <svg
-                    className="w-6 h-6"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M19 14l-7 7m0 0l-7-7m7 7V3"
-                    />
-                  </svg>
-                </div>
-              </button>
-
-              {openIndex === index && (
-                <div className="px-6 py-4 bg-gray-50 border-t border-gray-200">
-                  <p className="text-gray-700 text-lg leading-relaxed">
-                    {item.answer}
-                  </p>
-                </div>
-              )}
-            </div>
-          ))}
+    <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gray-50">
+      <div className="max-w-3xl mx-auto">
+        {/* Header */}
+        <div className="text-center mb-20">
+          <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4 tracking-tight">
+            {title}
+          </h2>
+          {subtitle && (
+            <p className="text-lg sm:text-xl text-gray-600">
+              {subtitle}
+            </p>
+          )}
         </div>
 
-        {/* CTA */}
-        <div className="mt-12 p-8 bg-brand-green bg-opacity-10 rounded-lg border-l-4 border-brand-green text-center">
-          <h3 className="text-xl font-bold text-gray-900 mb-3">
+        {/* Accordion */}
+        <div className="bg-white rounded-xl border border-gray-200 p-8 sm:p-10">
+          <Accordion type="single" collapsible className="w-full">
+            {faqItems.map((item, index) => (
+              <AccordionItem key={index} value={`item-${index}`}>
+                <AccordionTrigger className="text-lg">
+                  {item.question}
+                </AccordionTrigger>
+                <AccordionContent className="text-base leading-relaxed text-gray-700">
+                  {item.answer}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+        </div>
+
+        {/* CTA Box */}
+        <div className="mt-12 p-8 sm:p-10 bg-brand-green/10 rounded-xl border border-brand-green/30 text-center">
+          <h3 className="text-2xl font-bold text-gray-900 mb-3">
             Kan vi svara på fler frågor?
           </h3>
-          <p className="text-gray-700 mb-6">
-            Kontakta oss gärna för en personlig konsultation om dina städbehov.
+          <p className="text-gray-700 mb-6 max-w-2xl mx-auto">
+            Kontakta oss gärna för en personlig konsultation om dina städbehov. Vi svarar inom 24 timmar.
           </p>
-          <a
-            href="/kontakt"
-            className="inline-block px-8 py-3 bg-brand-green text-white font-semibold rounded-lg hover:bg-green-600 transition-colors duration-200"
-          >
-            Skicka en förfrågan →
-          </a>
+          <Link href="/kontakt">
+            <Button variant="primary" size="lg">
+              Skicka en förfrågan
+            </Button>
+          </Link>
         </div>
       </div>
     </section>

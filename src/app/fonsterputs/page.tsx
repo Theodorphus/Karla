@@ -1,23 +1,24 @@
 import { Metadata } from 'next'
 import { ServicePageTemplate } from '@/components/services/ServicePageTemplate'
+import { ServiceStructuredData } from '@/components/seo/ServiceStructuredData'
 import { getServiceBySlug } from '@/lib/data/services'
+import { generateServiceMetadata } from '@/lib/utils/seo'
 
-export const metadata: Metadata = {
-  title: 'Fönsterputs Göteborg | RUT-avdrag | Kristallklara Fönster',
+export const metadata: Metadata = generateServiceMetadata({
+  title: 'Fönsterputs',
   description:
-    'Professionell fönsterputs för hem och kontor i Göteborg. RUT-avdrag tillgängligt. Miljövänliga produkter, garanterade kristallklara fönster.',
-  openGraph: {
-    title: 'Fönsterputs Göteborg | Karla Cleaning Crew',
-    description: 'Kristallklara fönster med miljövänliga produkter. RUT-avdrag.',
-    url: 'https://karlacleaningcrew.se/fonsterputs',
-  },
-  alternates: {
-    canonical: 'https://karlacleaningcrew.se/fonsterputs',
-  },
-}
+    'Professionell fönsterputs för hem och kontor i Göteborg. In- och utsida, RUT-avdrag, miljövänliga produkter, kristallklara resultat.',
+  slug: 'fonsterputs',
+  imageSrc: '/images/services/fonsterputs_hero.png',
+})
 
 export default function FonsterputsPage() {
   const service = getServiceBySlug('fonsterputs')
   if (!service) return <div>Tjänsten hittades inte</div>
-  return <ServicePageTemplate service={service} />
+  return (
+    <>
+      <ServiceStructuredData service={service} slug="fonsterputs" />
+      <ServicePageTemplate service={service} />
+    </>
+  )
 }

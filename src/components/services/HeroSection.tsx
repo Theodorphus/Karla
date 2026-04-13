@@ -13,15 +13,26 @@ export function HeroSection({
   imageSrc,
 }: HeroSectionProps) {
   return (
-    <section className="relative bg-gradient-hero text-gray-900 py-section-lg px-section-sm overflow-hidden">
-      {/* Accent shape */}
-      <div className="absolute right-0 top-1/2 -translate-y-1/2 w-96 h-96 bg-brand-green rounded-full opacity-20 -mr-48 pointer-events-none" />
+    <section className="relative overflow-hidden h-[600px] flex items-center justify-center">
+      {/* Background Image */}
+      {imageSrc && (
+        <>
+          <img
+            src={imageSrc}
+            alt={title}
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+          {/* Dark Overlay - Gradient for text readability */}
+          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/30"></div>
+        </>
+      )}
 
-      <div className="max-w-6xl mx-auto">
+      {/* Content */}
+      <div className="relative max-w-5xl mx-auto text-center px-4 sm:px-6 lg:px-8 z-10">
         {/* Back link */}
         <Link
           href="/tjanster"
-          className="inline-flex items-center text-gray-600 hover:text-brand-dark transition-colors mb-8"
+          className="inline-flex items-center text-gray-100 hover:text-white transition-colors mb-8"
         >
           <svg
             className="w-4 h-4 mr-2"
@@ -39,66 +50,47 @@ export function HeroSection({
           <span className="font-medium">Tillbaka till tjänster</span>
         </Link>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Left content */}
-          <div>
-            <h1 className="text-5xl lg:text-6xl font-bold mb-4 leading-tight">
-              {title}
-            </h1>
-            <p className="text-xl text-gray-700 mb-8 leading-relaxed">
-              {tagline}
-            </p>
+        <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight text-white tracking-tight">
+          {title}
+        </h1>
 
-            {/* Quick points */}
-            <ul className="space-y-3 mb-10">
-              {[
-                'Flexibla tider anpassade efter dina behov',
-                'Miljövänliga rengöringsprodukter',
-                'Nöjd-kund garanti',
-              ].map((point, i) => (
-                <li key={i} className="flex items-center gap-3">
-                  <svg
-                    className="w-5 h-5 text-brand-green flex-shrink-0"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
-                  </svg>
-                  <span className="text-gray-700">{point}</span>
-                </li>
-              ))}
-            </ul>
+        <p className="text-lg sm:text-xl mb-12 text-gray-100 max-w-3xl mx-auto leading-relaxed">
+          {tagline}
+        </p>
 
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Button asChild size="lg" className="rounded-full">
-                <Link href="/kontakt">Beställ nu</Link>
-              </Button>
-              <Button
-                variant="outline"
-                size="lg"
-                className="rounded-full"
-                asChild
-              >
-                <a href="tel:+46707402080">Ring oss</a>
-              </Button>
+        {/* Quick points - in white badges */}
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12 max-w-2xl mx-auto">
+          {[
+            'Flexibla tider anpassade efter dina behov',
+            'Miljövänliga rengöringsprodukter',
+            'Nöjd-kund garanti',
+          ].map((point, i) => (
+            <div
+              key={i}
+              className="bg-white/15 backdrop-blur-md rounded-lg p-4 border border-white/25 hover:bg-white/20 transition-colors"
+            >
+              <p className="text-sm text-white font-medium">{point}</p>
             </div>
-          </div>
+          ))}
+        </div>
 
-          {/* Right visual */}
-          {imageSrc && (
-            <div className="relative h-96 hidden lg:block">
-              {/* Accent circle background */}
-              <div className="absolute inset-0 bg-gradient-to-br from-brand-green-lighter to-brand-green-light rounded-full opacity-40 transform scale-125" />
-
-              {/* Image */}
-              <img
-                src={imageSrc}
-                alt={title}
-                className="w-full h-full object-cover rounded-3xl relative z-10 shadow-strong"
-              />
-            </div>
-          )}
+        {/* CTA Buttons */}
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <Link href="/kontakt">
+            <Button
+              size="lg"
+              variant="secondary"
+              className="shadow-xl"
+            >
+              Beställ nu
+            </Button>
+          </Link>
+          <a
+            href="tel:+46707402080"
+            className="inline-flex items-center justify-center font-semibold rounded-full transition-all duration-200 whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 text-gray-900 border-2 border-gray-900 bg-black/10 hover:bg-black/20 active:bg-black/25 focus-visible:ring-gray-900 px-8 py-3 text-lg"
+          >
+            Ring oss
+          </a>
         </div>
       </div>
     </section>

@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { Button } from '@/components/ui/Button'
 import { MAIN_NAV, SERVICES_NAV } from '@/lib/data/navigation'
 import { MobileMenu } from './MobileMenu'
@@ -26,29 +27,39 @@ export function Header() {
           : 'bg-white/50 backdrop-blur-sm shadow-none'
       }`}
     >
-      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
-        {/* Logo */}
-        <Link href="/" className="flex items-center gap-2 font-bold text-lg hover:opacity-80 transition-opacity">
-          <div className="flex items-center justify-center w-10 h-10 bg-brand-green rounded-lg">
-            <span className="text-white text-sm font-black">K</span>
+      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-18">
+        {/* Logo + Företagsnamn */}
+        <Link href="/" className="group flex items-center gap-3">
+          <div className="relative h-8 w-8 flex-shrink-0">
+            <Image
+              src="/images/logo.png"
+              alt="Karla Cleaning Crew logotyp"
+              fill
+              className="object-contain"
+              priority
+            />
           </div>
-          <span className="hidden sm:inline">
-            <span className="text-brand-green">Karla</span> Crew
-          </span>
-          <span className="sm:hidden text-brand-green">Karla</span>
+          <div className="hidden sm:flex flex-col leading-snug">
+            <span className="font-semibold tracking-wide text-gray-800 text-[15px] group-hover:text-brand-green transition-colors duration-200">
+              Karla Cleaning Crew
+            </span>
+            <span className="text-[11px] text-gray-400 font-normal tracking-widest uppercase">
+              Proffsig Städservice
+            </span>
+          </div>
         </Link>
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-8">
           {MAIN_NAV.map((item) => (
-            <Link key={item.href} href={item.href} className="text-gray-700 hover:text-brand-green transition-colors">
+            <Link key={item.href} href={item.href} className="text-gray-700 hover:text-brand-green hover:bg-gray-100 px-3 py-1.5 rounded-md transition-colors">
               {item.label}
             </Link>
           ))}
 
           {/* Services Dropdown */}
           <div className="relative group">
-            <button className="text-gray-700 hover:text-brand-green transition-colors flex items-center gap-1">
+            <button className="text-gray-700 hover:text-brand-green hover:bg-gray-100 px-3 py-1.5 rounded-md transition-colors flex items-center gap-1">
               Tjänster
               <svg
                 className="w-4 h-4 transition-transform group-hover:rotate-180"
@@ -79,9 +90,9 @@ export function Header() {
 
         {/* CTA Button - Desktop */}
         <div className="hidden md:block">
-          <Button asChild>
-            <Link href="/kontakt">Få offert här</Link>
-          </Button>
+          <Link href="/kontakt">
+            <Button>Få offert här</Button>
+          </Link>
         </div>
 
         {/* Mobile Menu Button */}

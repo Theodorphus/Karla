@@ -11,12 +11,17 @@ const config: Config = {
       colors: {
         brand: {
           green: '#55A85B',
+          'green-dark': '#3D8042',
           'green-light': '#E8F6EB',
           'green-lighter': '#F0F8F3',
           white: '#FFFFFF',
           dark: '#32373c',
           'dark-bg': '#1A1A1A',
         },
+        'dark-section': '#1C3A1E',
+      },
+      fontFamily: {
+        display: 'var(--font-display)',
       },
       spacing: {
         'section-sm': '40px',

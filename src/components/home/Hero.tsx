@@ -1,38 +1,42 @@
 import Link from 'next/link'
 import Image from 'next/image'
+import { CheckCircle } from 'lucide-react'
 import { Button } from '@/components/ui/Button'
+import { Icon } from '@/components/ui/Icon'
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden h-[600px] flex items-center justify-center">
+    <section className="relative overflow-hidden h-[700px] flex items-center justify-center">
       {/* Background Image */}
       <Image
-        src="/images/generated/startsida_hero.png"
+        src="/images/home/hero_home.png"
         alt="Karla Cleaning Crew professionell städning"
         fill
         className="object-cover"
         priority
         sizes="100vw"
+        unoptimized
       />
 
       {/* Dark Overlay - Gradient for text readability */}
-      <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/30"></div>
+      <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-black/20"></div>
 
       {/* Content */}
       <div className="relative max-w-5xl mx-auto text-center px-4 sm:px-6 lg:px-8 z-10">
         {/* Trust badge */}
         <div className="mb-8 inline-block">
-          <div className="inline-flex items-center gap-2 bg-white/15 backdrop-blur-md px-4 py-2 rounded-full border border-white/30">
-            <span className="text-sm font-semibold">✓ Göteborg | +10 år erfarenhet | 24h garanti</span>
+          <div className="inline-flex items-center gap-2 bg-white/15 backdrop-blur-md px-4 py-3 rounded-full border border-white/30">
+            <Icon icon={CheckCircle} size={18} color="white" />
+            <span className="text-sm font-semibold text-white">Göteborg | +10 år erfarenhet | 24h garanti</span>
           </div>
         </div>
 
-        <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 leading-tight text-white tracking-tight">
-          Professionell städning i <span className="text-green-300">Göteborg</span>
+        <h1 className="font-display text-4xl sm:text-5xl lg:text-7xl font-bold mb-6 leading-tight text-white tracking-tight">
+          Professionell städning <br />du kan lita på
         </h1>
 
         <p className="text-lg sm:text-xl mb-12 text-gray-100 max-w-3xl mx-auto leading-relaxed">
-          Låt oss ta hand om städningen så du kan fokusera på det som är viktigt. Miljövänligt, pålitligt, och alltid på tid.
+          Låt oss ta hand om städningen. Du får mer fritid, vi garanterar samma pristabilitet och hundra procent miljövänlig rengöring.
         </p>
 
         {/* Trust signals */}
@@ -53,21 +57,27 @@ export function Hero() {
 
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Button
-            asChild
-            size="lg"
-            className="bg-white text-brand-green hover:bg-gray-100 active:bg-gray-200 shadow-lg font-semibold"
-          >
-            <Link href="/kontakt">Få kostnadsfri offert</Link>
-          </Button>
-          <Button
-            asChild
-            size="lg"
-            variant="outline"
-            className="border-2 border-white text-white hover:bg-white/15 active:bg-white/25 font-semibold backdrop-blur-sm"
-          >
-            <Link href="/tjanster">Se alla tjänster</Link>
-          </Button>
+          {/* PRIMARY: White button with shadow */}
+          <Link href="/kontakt">
+            <Button
+              size="lg"
+              variant="secondary"
+              className="shadow-xl"
+            >
+              Få kostnadsfri offert
+            </Button>
+          </Link>
+
+          {/* SECONDARY: Services link */}
+          <Link href="/tjanster">
+            <Button
+              size="lg"
+              variant="primary"
+              className="border-2 border-brand-green"
+            >
+              Se alla tjänster
+            </Button>
+          </Link>
         </div>
       </div>
     </section>
