@@ -36,7 +36,7 @@ export function Hero() {
         </h1>
 
         <p className="text-lg sm:text-xl mb-12 text-gray-100 max-w-3xl mx-auto leading-relaxed">
-          Låt oss ta hand om städningen. Du får mer fritid, vi garanterar samma pristabilitet och hundra procent miljövänlig rengöring.
+          Låt oss ta hand om städningen. Du får mer tid över – vi levererar alltid hög kvalitet och arbetar med miljövänliga produkter.
         </p>
 
         {/* Trust signals */}
