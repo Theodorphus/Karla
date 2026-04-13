@@ -29,8 +29,11 @@ const jakarta = Plus_Jakarta_Sans({
  * - Schema.org structured data
  * - Robots & indexing rules
  */
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL
+  || (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'https://karlacleaningcrew.se')
+
 export const metadata: Metadata = {
-  metadataBase: new URL('https://karlacleaningcrew.se'),
+  metadataBase: new URL(siteUrl),
 
   // Title & Description
   title: {
