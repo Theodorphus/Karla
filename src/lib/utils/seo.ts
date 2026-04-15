@@ -51,9 +51,9 @@ export function generateServiceMetadata({
       images: [
         {
           url: imageSrc,
-          width: 1920,
-          height: 1080,
-          alt: title,
+          width: 1200,
+          height: 630,
+          alt: `${title} i Göteborg | Karla Cleaning Crew`,
           type: 'image/png',
         },
       ],
@@ -67,48 +67,6 @@ export function generateServiceMetadata({
   }
 }
 
-/**
- * Local business schema for structured data
- */
-export const localBusinessSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'LocalBusiness',
-  name: 'Karla Cleaning Crew',
-  description: 'Professionell städning i Göteborg',
-  url: 'https://karlacleaningcrew.se',
-  telephone: '+46707402080',
-  email: 'info@karlacleaningcrew.se',
-  address: {
-    '@type': 'PostalAddress',
-    streetAddress: '[Din adress]',
-    addressLocality: 'Göteborg',
-    postalCode: '[PIN]',
-    addressCountry: 'SE',
-  },
-  areaServed: {
-    '@type': 'City',
-    name: 'Göteborg',
-  },
-  priceRange: 'SEK',
-  openingHoursSpecification: [
-    {
-      '@type': 'OpeningHoursSpecification',
-      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
-      opens: '08:00',
-      closes: '18:00',
-    },
-    {
-      '@type': 'OpeningHoursSpecification',
-      dayOfWeek: 'Saturday',
-      opens: '09:00',
-      closes: '15:00',
-    },
-  ],
-  sameAs: [
-    'https://facebook.com/karlacleaningcrew',
-    'https://instagram.com/karlacleaningcrew',
-  ],
-}
 
 /**
  * Generate service schema for structured data

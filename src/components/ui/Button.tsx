@@ -36,21 +36,21 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       'font-semibold rounded-lg transition-all duration-200 inline-flex items-center justify-center whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2'
 
     const variantStyles: Record<ButtonVariant, string> = {
-      // PRIMÄR: Bold green för main CTA (beställ, kontakta)
+      // PRIMÄR: Mörk navy för premium CTA
       primary:
-        'bg-brand-green text-white hover:bg-green-600 active:bg-green-700 focus-visible:ring-brand-green shadow-md hover:shadow-lg hover:translate-y-[-2px]',
+        'bg-navy text-white hover:bg-petrol active:bg-petrol/90 focus-visible:ring-navy shadow-md hover:shadow-lg hover:translate-y-[-1px] tracking-wide',
 
-      // SEKUNDÄR: Vit knapp med skugga & hover lift för stark CTA
+      // SEKUNDÄR: Vit knapp med skugga (på mörk bakgrund)
       secondary:
-        'bg-white text-gray-900 hover:bg-gray-50 active:bg-gray-100 focus-visible:ring-brand-green shadow-lg hover:shadow-xl hover:translate-y-[-2px] border border-white',
+        'bg-white text-navy hover:bg-gray-50 active:bg-gray-100 focus-visible:ring-navy shadow-lg hover:shadow-xl hover:translate-y-[-1px] border border-white/20',
 
-      // OUTLINE: Grön ram för alternativ CTA
+      // OUTLINE: Navy ram
       outline:
-        'border-2 border-brand-green text-brand-green hover:bg-brand-green/5 active:bg-brand-green/10 focus-visible:ring-brand-green',
+        'border-2 border-navy text-navy hover:bg-navy hover:text-white active:bg-petrol focus-visible:ring-navy transition-colors',
 
-      // GHOST: Transparent, bara text (för links i CTABanner)
+      // GHOST: Transparent, bara text (för links i mörka sektioner)
       'ghost':
-        'text-white hover:bg-white/20 active:bg-white/30 focus-visible:ring-white focus-visible:ring-offset-0',
+        'text-white hover:bg-white/15 active:bg-white/25 focus-visible:ring-white focus-visible:ring-offset-0',
     }
 
     const sizeStyles: Record<ButtonSize, string> = {

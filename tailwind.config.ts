@@ -18,6 +18,8 @@ const config: Config = {
           dark: '#32373c',
           'dark-bg': '#1A1A1A',
         },
+        navy: '#0A1A2F',
+        petrol: '#0F3A47',
         'dark-section': '#1C3A1E',
       },
       fontFamily: {

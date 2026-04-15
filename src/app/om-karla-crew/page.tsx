@@ -4,12 +4,12 @@ import { Breadcrumbs } from '@/components/ui/Breadcrumbs'
 import { TEAM } from '@/lib/data/team'
 
 export const metadata: Metadata = {
-  title: 'Om Karla Cleaning Crew',
+  title: 'Om oss – Städföretag Göteborg med 10+ års erfarenhet',
   description:
-    'Läs om Karla Cleaning Crew - ett erfaret team dedikerat till professionell städning i Göteborg.',
+    'Karla Cleaning Crew är ett professionellt städföretag i Göteborg. Miljövänligt, försäkrat och med städgaranti. Läs om teamet och vår historia.',
   openGraph: {
-    title: 'Om Karla Cleaning Crew',
-    description: 'Läs om vårt erfarna team och vår mission.',
+    title: 'Om Karla Cleaning Crew – Städföretag Göteborg',
+    description: 'Professionellt städföretag i Göteborg med 10+ års erfarenhet. Miljövänligt, försäkrat, städgaranti.',
     url: 'https://karlacleaningcrew.se/om-karla-crew',
   },
   alternates: {
@@ -29,10 +29,10 @@ export default function OmKarlaCrew() {
       />
 
       {/* Hero */}
-      <section className="bg-gradient-to-r from-brand-green to-green-600 text-white py-16 px-4 sm:px-6 lg:px-8">
+      <section className="bg-gradient-to-br from-navy to-petrol text-white py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-4xl sm:text-5xl font-bold mb-4">Om Karla Cleaning Crew</h1>
-          <p className="text-xl text-green-50">
+          <p className="text-xl text-white/80">
             Göteborg förtjänar professionell städning. Därför finns vi här.
           </p>
         </div>

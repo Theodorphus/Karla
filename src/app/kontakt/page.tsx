@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 import { Phone, Mail, MapPin, Clock } from 'lucide-react'
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs'
-import { ContactForm } from '@/components/contact/ContactForm'
+import { QuoteForm } from '@/components/quote/QuoteForm'
 
 export const metadata: Metadata = {
   title: 'Kontakt | Karla Cleaning Crew | Göteborg',
@@ -29,11 +29,11 @@ export default function KontaktPage() {
       />
 
       {/* Hero */}
-      <section className="bg-gradient-to-b from-brand-green to-brand-green/90 text-white py-20 px-4 sm:px-6 lg:px-8">
+      <section className="bg-gradient-to-b from-navy to-petrol text-white py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold mb-4">Kontakta oss</h1>
-          <p className="text-lg sm:text-xl text-green-50">
-            Snabb respons garanterad. Vi svarar inom 24 timmar.
+          <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold mb-4">Få din offert idag</h1>
+          <p className="text-lg sm:text-xl text-white/75">
+            Kostnadsfritt, utan bindningstid. Svar inom 24 timmar.
           </p>
         </div>
       </section>
@@ -46,35 +46,35 @@ export default function KontaktPage() {
             <h2 className="text-2xl font-bold text-gray-900 mb-8">Kontaktinformation</h2>
 
             {/* Phone Card */}
-            <div className="mb-8 p-6 bg-gray-50 rounded-xl border border-gray-200 hover:border-brand-green/30 hover:shadow-medium transition-all duration-300">
+            <div className="mb-8 p-6 bg-[#F7F7F7] rounded-xl border border-[#E5E5E5] hover:border-navy/20 hover:shadow-subtle transition-all duration-300">
               <div className="flex items-start gap-3 mb-3">
                 <Phone size={20} className="text-brand-green flex-shrink-0 mt-1" />
                 <h3 className="font-semibold text-gray-900">Telefon</h3>
               </div>
               <a
                 href="tel:+46707402080"
-                className="text-brand-green hover:text-green-600 text-lg font-semibold break-all ml-8"
+                className="text-navy hover:text-petrol text-lg font-semibold break-all ml-8"
               >
                 +46 707 40 20 80
               </a>
             </div>
 
             {/* Email Card */}
-            <div className="mb-8 p-6 bg-gray-50 rounded-xl border border-gray-200 hover:border-brand-green/30 hover:shadow-medium transition-all duration-300">
+            <div className="mb-8 p-6 bg-[#F7F7F7] rounded-xl border border-[#E5E5E5] hover:border-navy/20 hover:shadow-subtle transition-all duration-300">
               <div className="flex items-start gap-3 mb-3">
                 <Mail size={20} className="text-brand-green flex-shrink-0 mt-1" />
                 <h3 className="font-semibold text-gray-900">E-post</h3>
               </div>
               <a
                 href="mailto:Info@karlacleaningcrew.se"
-                className="text-brand-green hover:text-green-600 break-all ml-8"
+                className="text-navy hover:text-petrol break-all ml-8"
               >
                 Info@karlacleaningcrew.se
               </a>
             </div>
 
             {/* Address Card */}
-            <div className="mb-8 p-6 bg-gray-50 rounded-xl border border-gray-200 hover:border-brand-green/30 hover:shadow-medium transition-all duration-300">
+            <div className="mb-8 p-6 bg-[#F7F7F7] rounded-xl border border-[#E5E5E5] hover:border-navy/20 hover:shadow-subtle transition-all duration-300">
               <div className="flex items-start gap-3 mb-3">
                 <MapPin size={20} className="text-brand-green flex-shrink-0 mt-1" />
                 <h3 className="font-semibold text-gray-900">Adress</h3>
@@ -89,7 +89,7 @@ export default function KontaktPage() {
             </div>
 
             {/* Hours Card */}
-            <div className="mb-8 p-6 bg-gray-50 rounded-xl border border-gray-200 hover:border-brand-green/30 hover:shadow-medium transition-all duration-300">
+            <div className="mb-8 p-6 bg-[#F7F7F7] rounded-xl border border-[#E5E5E5] hover:border-navy/20 hover:shadow-subtle transition-all duration-300">
               <div className="flex items-start gap-3 mb-3">
                 <Clock size={20} className="text-brand-green flex-shrink-0 mt-1" />
                 <h3 className="font-semibold text-gray-900">Öppet</h3>
@@ -101,7 +101,7 @@ export default function KontaktPage() {
             </div>
 
             {/* Social */}
-            <div className="p-6 bg-gray-50 rounded-xl border border-gray-200">
+            <div className="p-6 bg-[#F7F7F7] rounded-xl border border-[#E5E5E5]">
               <h3 className="font-semibold text-gray-900 mb-4">Följ oss</h3>
               <div className="flex gap-4">
                 <a
@@ -130,14 +130,15 @@ export default function KontaktPage() {
             </div>
           </div>
 
-          {/* Contact Form */}
-          <div className="lg:col-span-2">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6">Få din gratis offert</h2>
-            <p className="text-gray-600 mb-8">
-              Berätta om dina städbehov i formuläret nedan. Vi granskar din förfrågan
-              och kontaktar dig inom 24 timmar med en personlig offert och rekommendationer.
-            </p>
-            <ContactForm />
+          {/* Quote Form */}
+          <div className="lg:col-span-2 bg-white rounded-2xl border border-gray-200 p-6 sm:p-8">
+            <div className="mb-6">
+              <h2 className="text-2xl font-bold text-gray-900 mb-1">Begär kostnadsfri offert</h2>
+              <p className="text-gray-500 text-sm">
+                3 enkla steg — vi svarar med ett personligt pris inom 24 timmar.
+              </p>
+            </div>
+            <QuoteForm />
           </div>
         </div>
       </div>
@@ -149,28 +150,28 @@ export default function KontaktPage() {
             Vanliga frågor
           </h2>
           <div className="space-y-6">
-            <div className="bg-white p-6 rounded-lg">
+            <div className="bg-white p-6 rounded-xl border border-[#E5E5E5]">
               <h3 className="text-lg font-bold text-gray-900 mb-3">Hur snabbt kan ni möta mig?</h3>
               <p className="text-gray-600">
                 Vi erbjuder flexibel schemaläggning och kan ofta komma ut inom en vecka.
                 För brådskande uppdrag kan vi ofta fixa något ännu snabbare.
               </p>
             </div>
-            <div className="bg-white p-6 rounded-lg">
+            <div className="bg-white p-6 rounded-xl border border-[#E5E5E5]">
               <h3 className="text-lg font-bold text-gray-900 mb-3">Erbjuder ni RUT-avdrag?</h3>
               <p className="text-gray-600">
                 Ja, vi erbjuder RUT-avdrag för hemstädning och fönsterputs.
                 Detta kan reducera din kostnad med upp till 50%. Kontakta oss för mer information.
               </p>
             </div>
-            <div className="bg-white p-6 rounded-lg">
+            <div className="bg-white p-6 rounded-xl border border-[#E5E5E5]">
               <h3 className="text-lg font-bold text-gray-900 mb-3">Är ni försäkrade?</h3>
               <p className="text-gray-600">
                 Ja, vi är fullt försäkrade för all vår verksamhet.
                 Du kan känna dig säker och skyddad när du använder vår service.
               </p>
             </div>
-            <div className="bg-white p-6 rounded-lg">
+            <div className="bg-white p-6 rounded-xl border border-[#E5E5E5]">
               <h3 className="text-lg font-bold text-gray-900 mb-3">Vilka produkter använder ni?</h3>
               <p className="text-gray-600">
                 Vi använder huvudsakligen miljövänliga, ekologiska rengöringsprodukter.

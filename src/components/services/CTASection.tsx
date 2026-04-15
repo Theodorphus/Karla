@@ -11,45 +11,43 @@ export function CTASection({
   subtitle = 'Kontakta oss idag för en helt kostnadsfri offert',
 }: CTASectionProps) {
   return (
-    <section className="bg-gradient-cta py-section-lg px-section-sm relative overflow-hidden">
-      {/* Decorative elements */}
-      <div className="absolute left-0 top-0 w-96 h-96 bg-brand-green rounded-full opacity-5 -ml-48 -mt-48" />
-      <div className="absolute right-0 bottom-0 w-96 h-96 bg-brand-green rounded-full opacity-5 -mr-48 -mb-48" />
-
-      <div className="max-w-2xl mx-auto relative z-10">
-        {/* Rounded container */}
-        <div className="bg-white rounded-3xl p-12 md:p-16 border-2 border-brand-green shadow-green-glow hover:shadow-strong transition-shadow duration-300">
-          {/* Accent line top */}
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-20 h-1 bg-brand-green rounded-full" />
-
+    <section className="bg-gray-50 py-24 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-2xl mx-auto">
+        <div className="bg-navy rounded-2xl p-10 md:p-14 text-white shadow-strong">
           {/* Content */}
           <div className="text-center mb-10">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4 leading-tight">
+            <p className="text-brand-green font-semibold tracking-widest text-sm uppercase mb-4">
+              Gratis offert
+            </p>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 leading-tight">
               {title}
             </h2>
-            <p className="text-xl text-gray-600 leading-relaxed">{subtitle}</p>
+            <p className="text-white/70 leading-relaxed">{subtitle}</p>
           </div>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
+          <div className="flex flex-col sm:flex-row gap-3 justify-center mb-10">
             <Link href="/kontakt">
-              <Button size="lg" className="rounded-full min-w-52 text-base">
+              <Button variant="secondary" size="lg" className="min-w-48 font-bold">
                 Beställ nu
               </Button>
             </Link>
-            <a href="tel:+46707402080" className="inline-flex items-center justify-center font-semibold rounded-lg transition-all duration-200 whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 border-2 border-brand-green text-brand-green hover:bg-brand-green/5 active:bg-brand-green/10 focus-visible:ring-brand-green px-8 py-3 text-lg rounded-full min-w-52">
+            <a
+              href="tel:+46707402080"
+              className="inline-flex items-center justify-center font-semibold rounded-lg transition-all duration-200 whitespace-nowrap px-8 py-3 text-lg text-white border border-white/25 hover:bg-white/10 min-w-48"
+            >
               Ring oss direkt
             </a>
           </div>
 
           {/* Divider */}
-          <div className="h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent my-8" />
+          <div className="h-px bg-white/10 my-8" />
 
           {/* Phone info */}
           <div className="text-center">
-            <p className="text-gray-600 mb-3 font-medium">Öppen mån–fre 08:00–17:00</p>
-            <p className="text-3xl font-bold text-brand-green tracking-tight">
-              +46 707 40 20 80
+            <p className="text-white/50 mb-2 text-sm tracking-wide">Öppen mån–fre 08:00–17:00</p>
+            <p className="text-2xl font-bold text-white tracking-tight">
+              070 740 20 80
             </p>
           </div>
         </div>

@@ -67,7 +67,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'sv_SE',
-    url: 'https://karlacleaningcrew.se',
+    url: siteUrl,
     siteName: 'Karla Cleaning Crew',
     title: 'Karla Cleaning Crew | Professionell städning Göteborg',
     description:
@@ -109,7 +109,7 @@ export const metadata: Metadata = {
 
   // Canonical URL
   alternates: {
-    canonical: 'https://karlacleaningcrew.se',
+    canonical: siteUrl,
   },
 }
 

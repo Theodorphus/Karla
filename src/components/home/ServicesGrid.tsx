@@ -7,12 +7,12 @@ import { serviceIcons } from '@/lib/data/serviceIcons'
 export function ServicesGrid() {
   // Map service slugs to generated image names
   const serviceImageMap: Record<string, string> = {
-    hemstadning: 'hemstadning_hero',
-    flyttstad: 'flyttstad_hero',
-    fonsterputs: 'fonsterputs_hero',
-    byggstad: 'byggstad_hero',
-    kontorsstadning: 'kontorsstadning_hero',
-    lokalvard: 'lokalvard_hero',
+    hemstadning: 'hemstadning_hero.png',
+    flyttstad: 'flyttstad_hero.png',
+    fonsterputs: 'fonsterputs_hero.png',
+    byggstad: 'byggstad_hero.png',
+    kontorsstadning: 'kontorsstadning_hero.png',
+    lokalvard: 'lokalvard_hero.png',
   }
 
   return (
@@ -30,7 +30,7 @@ export function ServicesGrid() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {SERVICES.map((service) => {
             const imageName = serviceImageMap[service.slug]
-            const imageUrl = imageName ? `/images/services/${imageName}.png` : null
+            const imageUrl = imageName ? `/images/services/${imageName}` : null
 
             return (
               <Link key={service.slug} href={`/${service.slug}`}>

@@ -9,9 +9,9 @@ export function ServiceStructuredData({ service, slug }: ServiceStructuredDataPr
   const baseUrl = 'https://karlacleaningcrew.se'
   const serviceUrl = `${baseUrl}/${slug}`
 
-  const schema = {
+  const serviceSchema = {
     '@context': 'https://schema.org',
-    '@type': 'Service',
+    '@type': 'CleaningService',
     name: service.title,
     description: service.description,
     provider: {
@@ -28,18 +28,43 @@ export function ServiceStructuredData({ service, slug }: ServiceStructuredDataPr
         addressCountry: 'SE',
       },
     },
-    areaServed: {
-      '@type': 'City',
-      name: 'Göteborg',
-    },
+    areaServed: [
+      { '@type': 'City', name: 'Göteborg' },
+      { '@type': 'City', name: 'Mölndal' },
+      { '@type': 'City', name: 'Kungsbacka' },
+      { '@type': 'City', name: 'Partille' },
+    ],
     url: serviceUrl,
-    image: `${baseUrl}/images/services/${slug}_hero.png`,
+    image: service.imageSrc ? `${baseUrl}${service.imageSrc}` : `${baseUrl}/images/Og1.png`,
   }
 
+  const faqSchema = service.faq && service.faq.length > 0
+    ? {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: service.faq.map((item) => ({
+          '@type': 'Question',
+          name: item.question,
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: item.answer,
+          },
+        })),
+      }
+    : null
+
   return (
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-    />
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
+      {faqSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+      )}
+    </>
   )
 }

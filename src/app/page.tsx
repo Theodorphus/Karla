@@ -1,3 +1,4 @@
+import type { Metadata } from 'next'
 import { Star, Shield, Leaf, Users } from 'lucide-react'
 import { Hero } from '@/components/home/Hero'
 import { ServicesGrid } from '@/components/home/ServicesGrid'
@@ -5,6 +6,15 @@ import { StatsRow } from '@/components/home/StatsRow'
 import { USPRow } from '@/components/sections/USPRow'
 import { Testimonials } from '@/components/sections/Testimonials'
 import { CTABanner } from '@/components/home/CTABanner'
+
+export const metadata: Metadata = {
+  title: 'Städning Göteborg | Hemstäd, Flyttstäd & Mer – Karla Cleaning Crew',
+  description:
+    'Professionell städning i Göteborg med RUT-avdrag. Hemstädning, flyttstäd, fönsterputs, byggstäd & kontorsstädning. Miljövänligt. Offert inom 24h.',
+  alternates: {
+    canonical: 'https://karlacleaningcrew.se',
+  },
+}
 
 export default function Home() {
   return (

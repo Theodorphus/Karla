@@ -7,12 +7,12 @@ import { Breadcrumbs } from '@/components/ui/Breadcrumbs'
 import { SERVICES } from '@/lib/data/services'
 
 export const metadata: Metadata = {
-  title: 'Våra tjänster',
+  title: 'Städtjänster Göteborg – Hem, Flytt, Kontor & Mer',
   description:
-    'Se vårt fullständiga utbud av städtjänster i Göteborg - hemstädning, flyttstäd, fönsterputs och mer.',
+    'Alla våra städtjänster i Göteborg: hemstädning, flyttstäd, fönsterputs, byggstäd, kontorsstädning och lokalvård. RUT-avdrag. Offert inom 24h.',
   openGraph: {
-    title: 'Våra tjänster | Karla Cleaning Crew',
-    description: 'Se vårt fullständiga utbud av städtjänster i Göteborg.',
+    title: 'Städtjänster i Göteborg | Karla Cleaning Crew',
+    description: 'Hemstädning, flyttstäd, fönsterputs, byggstäd, kontorsstädning och lokalvård i Göteborg. RUT-avdrag tillgänglig.',
     url: 'https://karlacleaningcrew.se/tjanster',
   },
   alternates: {
@@ -32,10 +32,10 @@ export default function TjansterPage() {
       />
 
       {/* Hero */}
-      <section className="bg-gradient-to-r from-brand-green to-green-600 text-white py-16 px-4 sm:px-6 lg:px-8">
+      <section className="bg-gradient-to-br from-navy to-petrol text-white py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-4xl sm:text-5xl font-bold mb-4">Våra tjänster</h1>
-          <p className="text-xl text-green-50">
+          <p className="text-xl text-white/80">
             Vi erbjuder ett brett utbud av professionella städtjänster för hem och företag
           </p>
         </div>

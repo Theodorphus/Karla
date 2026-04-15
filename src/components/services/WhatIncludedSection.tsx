@@ -31,45 +31,45 @@ export function WhatIncludedSection({
   // Normalize items to object format
   const normalizedItems = items.map((item) => {
     if (typeof item === 'string') {
-      return { title: item, icon: <CheckCircle size={24} className="text-brand-green" strokeWidth={2.5} /> }
+      return { title: item, icon: <CheckCircle size={20} className="text-brand-green" strokeWidth={2.5} /> }
     }
-    return { icon: <CheckCircle size={24} className="text-brand-green" strokeWidth={2.5} />, ...item }
+    return { icon: <CheckCircle size={20} className="text-brand-green" strokeWidth={2.5} />, ...item }
   })
 
   return (
     <section className="py-24 px-4 sm:px-6 lg:px-8 bg-white">
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-5xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-20">
-          <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4 tracking-tight">
+        <div className="text-center mb-14">
+          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-3 tracking-tight">
             {title}
           </h2>
           {subtitle && (
-            <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto">
+            <p className="text-lg text-gray-500 max-w-xl mx-auto leading-relaxed">
               {subtitle}
             </p>
           )}
         </div>
 
-        {/* Grid: 2-column on mobile, 3-column on desktop */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {normalizedItems.map((item, index) => (
             <div
               key={index}
-              className="group flex gap-4 p-6 bg-gray-50 rounded-xl hover:bg-brand-green/5 border border-transparent hover:border-brand-green/30 transition-all duration-300"
+              className="flex items-start gap-4 p-5 bg-[#F7F7F7] rounded-xl border border-[#E5E5E5] hover:border-navy/20 hover:shadow-subtle transition-all duration-200"
             >
-              {/* Icon */}
-              <div className="flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+              {/* Icon container */}
+              <div className="flex-shrink-0 w-9 h-9 rounded-lg bg-white border border-[#E5E5E5] flex items-center justify-center shadow-subtle">
                 {item.icon}
               </div>
 
               {/* Content */}
-              <div className="flex-grow">
-                <h3 className="font-semibold text-gray-900 mb-1 group-hover:text-brand-green transition-colors">
+              <div className="flex-grow pt-1">
+                <p className="font-semibold text-gray-900 leading-snug">
                   {item.title}
-                </h3>
+                </p>
                 {item.description && (
-                  <p className="text-sm text-gray-600 leading-relaxed">
+                  <p className="text-sm text-gray-500 leading-relaxed mt-1">
                     {item.description}
                   </p>
                 )}

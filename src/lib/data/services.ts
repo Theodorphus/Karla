@@ -261,7 +261,7 @@ export const SERVICES: ServiceData[] = [
     ],
     rutEligible: false,
     ecoFriendly: true,
-    imageSrc: '/images/services/kontor_hero.png',
+    imageSrc: '/images/services/kontorsstadning_hero.png',
     keyPoints: [
       {
         title: 'Fast kontaktperson',
