@@ -152,7 +152,7 @@ export default function KontaktPage() {
           </div>
 
           {/* Quote Form */}
-          <div className="lg:col-span-2 bg-white rounded-2xl border border-gray-200 p-6 sm:p-8">
+          <div id="offert" className="lg:col-span-2 bg-white rounded-2xl border border-gray-200 p-6 sm:p-8">
             <div className="mb-6">
               <h2 className="text-2xl font-bold text-gray-900 mb-1">Begär kostnadsfri offert</h2>
               <p className="text-gray-500 text-sm">

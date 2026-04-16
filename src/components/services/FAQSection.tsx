@@ -70,7 +70,7 @@ export function FAQSection({
           <p className="text-gray-700 mb-6 max-w-2xl mx-auto">
             Kontakta oss gärna för en personlig konsultation om dina städbehov. Vi svarar inom 24 timmar.
           </p>
-          <Link href="/kontakt">
+          <Link href="/kontakt#offert">
             <Button variant="primary" size="lg">
               Skicka en förfrågan
             </Button>

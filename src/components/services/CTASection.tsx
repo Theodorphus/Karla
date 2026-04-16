@@ -27,7 +27,7 @@ export function CTASection({
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-3 justify-center mb-10">
-            <Link href="/kontakt">
+            <Link href="/kontakt#offert">
               <Button variant="secondary" size="lg" className="min-w-48 font-bold">
                 Beställ nu
               </Button>

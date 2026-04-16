@@ -80,7 +80,7 @@ export function USPSection({ usps = defaultUSPs }: USPSectionProps) {
             Redo att märka skillnaden en professionell städservice kan göra?
           </p>
           <a
-            href="/kontakt"
+            href="/kontakt#offert"
             className="inline-block px-8 py-4 bg-brand-green text-white font-semibold rounded-full hover:bg-green-600 transition-colors duration-300"
           >
             Få gratis offert →

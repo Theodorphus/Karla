@@ -55,7 +55,7 @@ export function Hero() {
 
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Link href="/kontakt">
+          <Link href="/kontakt#offert">
             <Button size="lg" className="shadow-xl">
               Få kostnadsfri offert
             </Button>
