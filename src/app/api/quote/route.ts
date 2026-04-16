@@ -40,7 +40,7 @@ export async function POST(request: NextRequest) {
       .filter(Boolean)
       .join('\n')
 
-    await resend.emails.send({
+    const { data: sendData, error: sendError } = await resend.emails.send({
       from: 'no-reply@karlacleaningcrew.se',
       to: 'info@karlacleaningcrew.se',
       replyTo: data.email,
@@ -48,6 +48,12 @@ export async function POST(request: NextRequest) {
       html: lines,
     })
 
+    if (sendError) {
+      console.error('Resend error:', sendError)
+      return NextResponse.json({ error: 'E-post kunde inte skickas.' }, { status: 500 })
+    }
+
+    console.log('Email sent:', sendData?.id)
     return NextResponse.json({ success: true }, { status: 200 })
   } catch (error) {
     console.error('Quote API error:', error)
