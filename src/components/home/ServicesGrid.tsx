@@ -11,7 +11,7 @@ export function ServicesGrid() {
     flyttstad: 'flyttstad_hero.png',
     fonsterputs: 'fonsterputs_hero.png',
     byggstad: 'byggstad_hero.png',
-    kontorsstadning: 'kontorsstadning_hero.png',
+    kontorsstadning: 'L1.Hero.png',
     lokalvard: 'lokalvard_hero.png',
   }
 

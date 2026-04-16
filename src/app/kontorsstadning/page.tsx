@@ -9,7 +9,7 @@ export const metadata: Metadata = generateServiceMetadata({
   description:
     'Professionell kontorsstädning för företag i Göteborg. Fast kontaktperson, skräddarsydd städplan, flexibel schemaläggning, miljövänlig service.',
   slug: 'kontorsstadning',
-  imageSrc: '/images/services/kontorsstadning_hero.png',
+  imageSrc: '/images/services/L1.Hero.png',
 })
 
 export default function KontorsstadningPage() {
