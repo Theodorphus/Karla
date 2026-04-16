@@ -30,7 +30,7 @@ const jakarta = Plus_Jakarta_Sans({
  * - Robots & indexing rules
  */
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL
-  || 'https://karla-cleaning.vercel.app'
+  || 'https://karlacleaningcrew.se'
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),

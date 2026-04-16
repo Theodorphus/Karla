@@ -12,6 +12,12 @@ export const metadata: Metadata = {
     description: 'Kontakta oss för en gratis offert på städning. Snabb respons garanterad.',
     url: 'https://karlacleaningcrew.se/kontakt',
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Kontakt | Karla Cleaning Crew',
+    description: 'Kontakta oss för en gratis offert på städning. Snabb respons garanterad.',
+    images: ['/images/Og1.png'],
+  },
   alternates: {
     canonical: 'https://karlacleaningcrew.se/kontakt',
   },
@@ -98,6 +104,21 @@ export default function KontaktPage() {
                 <p>Måndag–Fredag: 08:00–17:00</p>
                 <p>Lördag–Söndag: Stängt</p>
               </div>
+            </div>
+
+            {/* Map */}
+            <div className="mb-8 rounded-xl overflow-hidden border border-[#E5E5E5]">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8525.580714981375!2d11.928778866283173!3d57.70974484486029!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x464ff350941a06ab%3A0xff5e3cee8fa278a!2sLodjursstr%C3%A5ket%201%2C%20417%2051%20G%C3%B6teborg!5e0!3m2!1ssv!2sse!4v1776348238234!5m2!1ssv!2sse"
+                width="100%"
+                height="200"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Karla Cleaning Crew karta"
+                aria-label="Google Maps karta över Karla Cleaning Crews adress"
+              />
             </div>
 
             {/* Social */}

@@ -35,6 +35,7 @@ export function Header() {
               src="/images/logo.png"
               alt="Karla Cleaning Crew logotyp"
               fill
+              sizes="32px"
               className="object-contain"
               priority
             />

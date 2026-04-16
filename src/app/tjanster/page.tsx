@@ -15,6 +15,12 @@ export const metadata: Metadata = {
     description: 'Hemstädning, flyttstäd, fönsterputs, byggstäd, kontorsstädning och lokalvård i Göteborg. RUT-avdrag tillgänglig.',
     url: 'https://karlacleaningcrew.se/tjanster',
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Städtjänster i Göteborg | Karla Cleaning Crew',
+    description: 'Hemstädning, flyttstäd, fönsterputs, byggstäd, kontorsstädning och lokalvård i Göteborg. RUT-avdrag tillgänglig.',
+    images: ['/images/Og1.png'],
+  },
   alternates: {
     canonical: 'https://karlacleaningcrew.se/tjanster',
   },

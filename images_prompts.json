@@ -1,50 +1,8 @@
 {
   "images": [
     {
-      "name": "startsida_hero",
+      "name": "hero_home",
       "prompt": "Bright Scandinavian home interior with modern furniture, professional cleaning team of 2-3 people in navy and white Karla uniforms, they are smiling and holding cleaning equipment, natural daylight from large windows, spotless clean surfaces, high detail, commercial hero image, premium quality",
-      "negative_prompt": "blurry, dark, messy, cluttered, distorted faces, extra limbs, low quality, watermark, text",
-      "resolution": "1920x1080"
-    },
-    {
-      "name": "startsida_trygghet",
-      "prompt": "Close-up portrait of friendly female cleaner in navy and white Karla uniform smiling warmly in bright Scandinavian home interior, warm natural daylight, trustworthy atmosphere, clean surfaces in background, professional appearance, high detail",
-      "negative_prompt": "blurry, dark, messy, cluttered, distorted faces, extra limbs, low quality, watermark, text",
-      "resolution": "1920x1080"
-    },
-    {
-      "name": "startsida_kvalitet",
-      "prompt": "Professional cleaner in navy and white Karla uniform wiping spotless kitchen counter with white cloth, modern Scandinavian kitchen with white and light wood cabinets, stainless steel appliances, natural daylight, sparkling clean, high detail, premium quality",
-      "negative_prompt": "blurry, dark, messy, cluttered, distorted faces, extra limbs, low quality, watermark, text",
-      "resolution": "1920x1080"
-    },
-    {
-      "name": "startsida_hemstadning",
-      "prompt": "Cleaner in navy and white Karla uniform vacuuming bright Scandinavian living room with light gray sofa, large windows with natural daylight, clean light oak flooring, minimalist interior design, fresh and tidy, high detail",
-      "negative_prompt": "blurry, dark, messy, cluttered, distorted faces, extra limbs, low quality, watermark, text",
-      "resolution": "1920x1080"
-    },
-    {
-      "name": "startsida_flyttstad",
-      "prompt": "Empty freshly cleaned Scandinavian apartment interior, polished light wood floors reflecting daylight, bright white walls, large windows with natural light streaming in, completely spotless, minimalist Scandinavian design, high detail",
-      "negative_prompt": "blurry, dark, messy, cluttered, distorted faces, extra limbs, low quality, watermark, text",
-      "resolution": "1920x1080"
-    },
-    {
-      "name": "startsida_recensioner_bg",
-      "prompt": "Soft blurred Scandinavian interior background with light gray walls, white minimalist furniture, natural soft daylight, neutral calm tones, clean and fresh, bokeh effect, high quality background",
-      "negative_prompt": "blurry, dark, messy, cluttered, distorted faces, extra limbs, low quality, watermark, text",
-      "resolution": "1920x1080"
-    },
-    {
-      "name": "omoss_team",
-      "prompt": "Professional group photo of 4-5 cleaner team members in navy and white Karla uniforms standing together smiling in bright Scandinavian office interior, large windows with natural daylight, modern furniture, team spirit, high detail, commercial quality",
-      "negative_prompt": "blurry, dark, messy, cluttered, distorted faces, extra limbs, low quality, watermark, text",
-      "resolution": "1920x1080"
-    },
-    {
-      "name": "omoss_bakom_kulisserna",
-      "prompt": "Cleaner in navy and white Karla uniform preparing and organizing cleaning equipment in organized Scandinavian storage room, shelves with supplies, natural daylight, professional atmosphere, clean and tidy, high detail",
       "negative_prompt": "blurry, dark, messy, cluttered, distorted faces, extra limbs, low quality, watermark, text",
       "resolution": "1920x1080"
     },
@@ -55,20 +13,8 @@
       "resolution": "1920x1080"
     },
     {
-      "name": "hemstadning_exempel",
-      "prompt": "Cleaner in navy and white Karla uniform folding white towels in clean bright Scandinavian bathroom, light wood vanity, white tiles, natural daylight, organized and tidy, fresh clean aesthetic, high detail",
-      "negative_prompt": "blurry, dark, messy, cluttered, distorted faces, extra limbs, low quality, watermark, text",
-      "resolution": "1920x1080"
-    },
-    {
       "name": "flyttstad_hero",
       "prompt": "Professional cleaner in navy and white Karla uniform mopping empty Scandinavian apartment with polished light wood floors, large bright windows with natural daylight, minimalist interior, sparkling clean, high detail professional quality",
-      "negative_prompt": "blurry, dark, messy, cluttered, distorted faces, extra limbs, low quality, watermark, text",
-      "resolution": "1920x1080"
-    },
-    {
-      "name": "flyttstad_resultat",
-      "prompt": "Completely empty freshly cleaned Scandinavian room with polished light wood flooring, white walls, large bright window with natural daylight, spotless pristine condition, minimalist modern interior, no furniture, high detail",
       "negative_prompt": "blurry, dark, messy, cluttered, distorted faces, extra limbs, low quality, watermark, text",
       "resolution": "1920x1080"
     },
@@ -79,20 +25,8 @@
       "resolution": "1920x1080"
     },
     {
-      "name": "fonsterputs_narbild",
-      "prompt": "Close-up macro shot of professional hand wearing blue cleaning glove wiping window with yellow squeegee, crystal clear sparkling glass, water droplets, bright natural daylight, professional detail, high quality",
-      "negative_prompt": "blurry, dark, messy, cluttered, distorted faces, extra limbs, low quality, watermark, text",
-      "resolution": "1920x1080"
-    },
-    {
       "name": "byggstad_hero",
       "prompt": "Professional cleaner in navy and white Karla uniform removing dust from newly renovated bright Scandinavian apartment interior, modern light wood and white surfaces, construction finished, natural daylight, clean and fresh, high detail",
-      "negative_prompt": "blurry, dark, messy, cluttered, distorted faces, extra limbs, low quality, watermark, text",
-      "resolution": "1920x1080"
-    },
-    {
-      "name": "byggstad_efter",
-      "prompt": "Interior of cleaned construction site in Scandinavian apartment, no debris or dust, bright modern white walls, light wood flooring, large windows with natural daylight, completely spotless finished, high detail professional quality",
       "negative_prompt": "blurry, dark, messy, cluttered, distorted faces, extra limbs, low quality, watermark, text",
       "resolution": "1920x1080"
     },
@@ -103,20 +37,14 @@
       "resolution": "1920x1080"
     },
     {
-      "name": "kontorsstadning_exempel",
-      "prompt": "Cleaner in navy and white Karla uniform vacuuming office hallway in modern Scandinavian office building, minimalistic light gray walls, white ceiling, natural daylight, clean professional atmosphere, modern architecture, high detail",
-      "negative_prompt": "blurry, dark, messy, cluttered, distorted faces, extra limbs, low quality, watermark, text",
-      "resolution": "1920x1080"
-    },
-    {
       "name": "lokalvard_hero",
       "prompt": "Cleaner in navy and white Karla uniform mopping bright Scandinavian school hallway, light wood and light gray floors, white walls, bright natural daylight from windows, clean fresh atmosphere, educational modern interior, high detail",
       "negative_prompt": "blurry, dark, messy, cluttered, distorted faces, extra limbs, low quality, watermark, text",
       "resolution": "1920x1080"
     },
     {
-      "name": "lokalvard_exempel",
-      "prompt": "Cleaner in navy and white Karla uniform wiping counter in bright Scandinavian retail store, white and light wood interior, organized shelving in background, natural daylight, clean commercial space, modern minimalist design, high detail",
+      "name": "team_photo",
+      "prompt": "Professional group photo of 4-5 cleaner team members in navy and white Karla uniforms standing together smiling in bright Scandinavian office interior, large windows with natural daylight, modern furniture, team spirit, high detail, commercial quality",
       "negative_prompt": "blurry, dark, messy, cluttered, distorted faces, extra limbs, low quality, watermark, text",
       "resolution": "1920x1080"
     }

@@ -12,6 +12,12 @@ export const metadata: Metadata = {
     description: 'Professionellt städföretag i Göteborg med 10+ års erfarenhet. Miljövänligt, försäkrat, städgaranti.',
     url: 'https://karlacleaningcrew.se/om-karla-crew',
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Om Karla Cleaning Crew – Städföretag Göteborg',
+    description: 'Professionellt städföretag i Göteborg med 10+ års erfarenhet. Miljövänligt, försäkrat, städgaranti.',
+    images: ['/images/Og1.png'],
+  },
   alternates: {
     canonical: 'https://karlacleaningcrew.se/om-karla-crew',
   },
