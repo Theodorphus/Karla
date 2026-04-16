@@ -3,11 +3,6 @@
  *
  * Premium customer reviews with 5-star ratings
  * Used on home page to build trust & social proof
- *
- * Features:
- * - StarRating component
- * - Hover effects
- * - Responsive 3-column grid
  */
 
 import { StarRating } from '@/components/ui/StarRating'
@@ -41,51 +36,48 @@ const TESTIMONIALS = [
 
 export function Testimonials() {
   return (
-    <section className="py-24 px-4 sm:px-6 lg:px-8 bg-surface-slate">
+    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-20">
-          <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4 tracking-tight">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-[#1A1A1A] mb-4 tracking-tight">
             Det säger våra kunder
           </h2>
-          <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className="text-lg text-gray-700 max-w-2xl mx-auto">
             Vi är stolta över det förtroende våra kunder visar oss dag efter dag.
           </p>
         </div>
 
         {/* Testimonials Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {TESTIMONIALS.map((testimonial) => (
             <div
               key={testimonial.id}
-              className="group bg-white p-8 rounded-2xl shadow-md border border-gray-200 hover:shadow-xl hover:scale-105 transition-all duration-300 flex flex-col"
+              className="bg-[#F5F5F5] rounded-2xl p-6 flex flex-col justify-between shadow-[0_4px_20px_rgba(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.07)] transition-all duration-300"
             >
-              {/* Opening quote mark */}
-              <div className="text-5xl text-brand-green mb-3">"</div>
-
               {/* Star Rating */}
               <div className="mb-4">
                 <StarRating rating={testimonial.rating} />
               </div>
 
               {/* Quote */}
-              <p className="text-gray-800 mb-6 text-base leading-relaxed flex-grow font-medium">
-                {testimonial.quote}
+              <p className="text-sm text-gray-800 italic leading-relaxed flex-grow mb-5">
+                &ldquo;{testimonial.quote}&rdquo;
               </p>
 
               {/* Author */}
-              <div className="border-t border-gray-200 pt-5">
-                <p className="font-bold text-gray-900">{testimonial.author}</p>
-                <p className="text-sm text-gray-600">{testimonial.role}</p>
+              <div className="border-t border-gray-200 pt-4">
+                <p className="font-semibold text-[#1A1A1A] text-sm">{testimonial.author}</p>
+                <p className="text-xs text-gray-500 mt-0.5">{testimonial.role}</p>
               </div>
             </div>
           ))}
         </div>
 
         {/* Trust Indicator */}
-        <div className="text-center mt-16 pt-8 border-t border-gray-200">
-          <p className="text-gray-700 text-lg">
-            <span className="font-bold text-brand-green text-xl">50+</span> nöjda kunder i Göteborg
+        <div className="text-center mt-12">
+          <p className="text-gray-600 text-base">
+            <span className="font-bold text-[#2E7D32] text-lg">50+</span> nöjda kunder i Göteborg
           </p>
         </div>
       </div>

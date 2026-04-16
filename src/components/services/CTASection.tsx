@@ -34,7 +34,7 @@ export function CTASection({
             </Link>
             <a
               href="tel:+46707402080"
-              className="inline-flex items-center justify-center font-semibold rounded-lg transition-all duration-200 whitespace-nowrap px-8 py-3 text-lg text-white border border-white/25 hover:bg-white/10 min-w-48"
+              className="inline-flex items-center justify-center font-semibold rounded-lg transition-all duration-200 whitespace-nowrap px-8 py-3 text-lg text-white border-2 border-white hover:bg-white hover:text-[#2E7D32] active:bg-white/90 min-w-48 shadow-md"
             >
               Ring oss direkt
             </a>

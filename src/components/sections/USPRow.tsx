@@ -32,39 +32,38 @@ export function USPRow({
   items,
 }: USPRowProps) {
   return (
-    <section className="bg-surface py-24 px-4 sm:px-6 lg:px-8">
+    <section className="bg-[#E8F5E9] py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-20">
-          <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4 tracking-tight leading-tight">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-[#1A1A1A] mb-4 tracking-tight leading-tight">
             {title}
           </h2>
-          <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg text-gray-700 max-w-2xl mx-auto leading-relaxed">
             {subtitle}
           </p>
         </div>
 
         {/* 4-Column Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {items.map((item, i) => (
             <div
               key={i}
-              className="group bg-white p-8 sm:p-9 rounded-2xl shadow-md border border-gray-200 hover:border-brand-green/40 hover:shadow-xl transition-all duration-300 flex flex-col"
+              className="bg-white rounded-2xl p-6 shadow-[0_4px_20px_rgba(0,0,0,0.05)] border border-transparent hover:border-[#A5D6A7] hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)] transition-all duration-300 flex gap-4"
             >
-              {/* Icon */}
-              <div className="mb-5 transform group-hover:scale-110 transition-transform duration-300">
-                <Icon icon={item.icon} size={40} color="brand" />
+              {/* Checkmark circle */}
+              <div className="flex-shrink-0 mt-0.5 h-9 w-9 rounded-full bg-[#E8F5E9] flex items-center justify-center">
+                <Icon icon={item.icon} size={18} color="brand" />
               </div>
 
-              {/* Title */}
-              <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 group-hover:text-brand-green transition-colors duration-200">
-                {item.title}
-              </h3>
-
-              {/* Description */}
-              <p className="text-gray-600 text-sm sm:text-base leading-relaxed flex-grow">
-                {item.description}
-              </p>
+              <div>
+                <h3 className="font-semibold text-[#1A1A1A] mb-1">
+                  {item.title}
+                </h3>
+                <p className="text-sm text-gray-700 leading-relaxed">
+                  {item.description}
+                </p>
+              </div>
             </div>
           ))}
         </div>

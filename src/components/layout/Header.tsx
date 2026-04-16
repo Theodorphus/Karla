@@ -41,10 +41,10 @@ export function Header() {
             />
           </div>
           <div className="hidden sm:flex flex-col leading-snug">
-            <span className="font-semibold tracking-wide text-gray-800 text-[15px] group-hover:text-brand-green transition-colors duration-200">
+            <span className="font-extrabold tracking-tight text-brand-green text-[17px] leading-none transition-colors duration-200">
               Karla Cleaning Crew
             </span>
-            <span className="text-[11px] text-gray-400 font-normal tracking-widest uppercase">
+            <span className="text-[11px] text-[#1A1A1A]/70 font-semibold tracking-widest uppercase mt-0.5">
               Proffsig Städservice
             </span>
           </div>
@@ -68,7 +68,7 @@ export function Header() {
                 stroke="currentColor"
                 viewBox="0 0 24 24"
               >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
               </svg>
             </button>
 

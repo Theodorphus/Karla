@@ -36,20 +36,16 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       'font-semibold rounded-lg transition-all duration-200 inline-flex items-center justify-center whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 cursor-pointer'
 
     const variantStyles: Record<ButtonVariant, string> = {
-      // PRIMÄR: Mörk navy för premium CTA
       primary:
         'bg-navy text-white hover:bg-petrol active:bg-petrol/90 focus-visible:ring-navy shadow-md hover:shadow-lg hover:translate-y-[-1px] tracking-wide',
 
-      // SEKUNDÄR: Vit knapp med skugga (på mörk bakgrund)
       secondary:
         'bg-white text-navy hover:bg-gray-50 active:bg-gray-100 focus-visible:ring-navy shadow-lg hover:shadow-xl hover:translate-y-[-1px] border border-white/20',
 
-      // OUTLINE: Navy ram
       outline:
         'border-2 border-navy text-navy hover:bg-navy hover:text-white active:bg-petrol focus-visible:ring-navy transition-colors',
 
-      // GHOST: Transparent, bara text (för links i mörka sektioner)
-      'ghost':
+      ghost:
         'text-white hover:bg-white/15 active:bg-white/25 focus-visible:ring-white focus-visible:ring-offset-0',
     }
 

@@ -87,7 +87,7 @@ export function HeroSection({
           </Link>
           <a
             href="tel:+46707402080"
-            className="inline-flex items-center justify-center font-semibold rounded-full transition-all duration-200 whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 text-gray-900 border-2 border-gray-900 bg-black/10 hover:bg-black/20 active:bg-black/25 focus-visible:ring-gray-900 px-8 py-3 text-lg"
+            className="inline-flex items-center justify-center font-semibold rounded-lg transition-all duration-200 whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-0 text-white border-2 border-white hover:bg-white hover:text-[#2E7D32] active:bg-white/90 px-8 py-3 text-lg shadow-md"
           >
             Ring oss
           </a>

@@ -6,7 +6,7 @@ import { Icon } from '@/components/ui/Icon'
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden h-[700px] flex items-center justify-center">
+    <section className="relative h-[75vh] min-h-[520px] flex items-center justify-center overflow-hidden">
       {/* Background Image */}
       <Image
         src="/images/home/hero_home2.png"
@@ -18,65 +18,52 @@ export function Hero() {
         unoptimized
       />
 
-      {/* Dark Overlay - Gradient for text readability */}
-      <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-black/20"></div>
+      {/* Dark overlay */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/40 to-black/55" />
 
       {/* Content */}
-      <div className="relative max-w-5xl mx-auto text-center px-4 sm:px-6 lg:px-8 z-10">
+      <div className="relative z-10 max-w-3xl mx-auto px-6 text-center text-white">
         {/* Trust badge */}
-        <div className="mb-8 inline-block">
-          <div className="inline-flex items-center gap-2 bg-white/15 backdrop-blur-md px-4 py-3 rounded-full border border-white/30">
-            <Icon icon={CheckCircle} size={18} color="white" />
-            <span className="text-sm font-semibold text-white">Göteborg | +10 år erfarenhet | 24h garanti</span>
-          </div>
+        <div className="mb-6 inline-flex items-center gap-2 bg-white/15 backdrop-blur-sm px-4 py-2 rounded-full border border-white/30">
+          <Icon icon={CheckCircle} size={16} color="white" />
+          <span className="text-sm font-semibold tracking-wide">Göteborg | +10 år erfarenhet | 24h garanti</span>
         </div>
 
-        <h1 className="font-display text-4xl sm:text-5xl lg:text-7xl font-bold mb-6 leading-tight text-white tracking-tight">
+        <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight drop-shadow-lg mb-4">
           Professionell städning <br />du kan lita på
         </h1>
 
-        <p className="text-lg sm:text-xl mb-12 text-gray-100 max-w-3xl mx-auto leading-relaxed">
+        <p className="text-lg sm:text-xl text-white/90 max-w-2xl mx-auto leading-relaxed drop-shadow mb-8">
           Låt oss ta hand om städningen. Du får mer tid över – vi levererar alltid hög kvalitet och arbetar med miljövänliga produkter.
         </p>
 
-        {/* Trust signals */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12 max-w-3xl mx-auto">
-          <div className="bg-white/10 backdrop-blur-md rounded-lg p-4 border border-white/25 hover:bg-white/15 transition-colors">
-            <div className="text-3xl font-bold text-white">100+</div>
-            <div className="text-sm text-gray-200">Nöjda kunder</div>
+        {/* Stats */}
+        <div className="grid grid-cols-3 gap-3 max-w-md mx-auto mb-8">
+          <div className="bg-white/10 backdrop-blur-md rounded-xl p-3 border border-white/25">
+            <div className="text-2xl font-bold">100+</div>
+            <div className="text-xs text-white/80 mt-0.5">Nöjda kunder</div>
           </div>
-          <div className="bg-white/10 backdrop-blur-md rounded-lg p-4 border border-white/25 hover:bg-white/15 transition-colors">
-            <div className="text-3xl font-bold text-white">10+</div>
-            <div className="text-sm text-gray-200">År erfarenhet</div>
+          <div className="bg-white/10 backdrop-blur-md rounded-xl p-3 border border-white/25">
+            <div className="text-2xl font-bold">10+</div>
+            <div className="text-xs text-white/80 mt-0.5">År erfarenhet</div>
           </div>
-          <div className="bg-white/10 backdrop-blur-md rounded-lg p-4 border border-white/25 hover:bg-white/15 transition-colors">
-            <div className="text-3xl font-bold text-white">24h</div>
-            <div className="text-sm text-gray-200">Garantisvar</div>
+          <div className="bg-white/10 backdrop-blur-md rounded-xl p-3 border border-white/25">
+            <div className="text-2xl font-bold">24h</div>
+            <div className="text-xs text-white/80 mt-0.5">Garantisvar</div>
           </div>
         </div>
 
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          {/* PRIMARY: White button with shadow */}
           <Link href="/kontakt">
-            <Button
-              size="lg"
-              variant="secondary"
-              className="shadow-xl"
-            >
+            <Button size="lg" className="shadow-xl">
               Få kostnadsfri offert
             </Button>
           </Link>
-
-          {/* SECONDARY: Services link */}
           <Link href="/tjanster">
-            <Button
-              size="lg"
-              variant="primary"
-              className="border-2 border-brand-green"
-            >
+            <button className="px-8 py-3 rounded-lg text-lg font-semibold border-2 border-white text-white hover:bg-white/15 transition-colors">
               Se alla tjänster
-            </Button>
+            </button>
           </Link>
         </div>
       </div>
