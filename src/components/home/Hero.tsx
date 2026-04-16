@@ -22,46 +22,46 @@ export function Hero() {
       <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/40 to-black/55" />
 
       {/* Content */}
-      <div className="relative z-10 max-w-3xl mx-auto px-6 text-center text-white">
+      <div className="relative z-10 max-w-3xl mx-auto px-4 sm:px-6 text-center text-white">
         {/* Trust badge */}
-        <div className="mb-6 inline-flex items-center gap-2 bg-white/15 backdrop-blur-sm px-4 py-2 rounded-full border border-white/30">
-          <Icon icon={CheckCircle} size={16} color="white" />
-          <span className="text-sm font-semibold tracking-wide">Göteborg | +10 år erfarenhet | 24h garanti</span>
+        <div className="mb-5 inline-flex items-center gap-2 bg-white/15 backdrop-blur-sm px-3 sm:px-4 py-2 rounded-full border border-white/30">
+          <Icon icon={CheckCircle} size={14} color="white" />
+          <span className="text-xs sm:text-sm font-semibold tracking-wide">Göteborg · +10 år erfarenhet · 24h garanti</span>
         </div>
 
-        <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight drop-shadow-lg mb-4">
-          Professionell städning <br />du kan lita på
+        <h1 className="font-display text-3xl sm:text-5xl lg:text-6xl font-bold leading-tight drop-shadow-lg mb-4">
+          Professionell städning du kan lita på
         </h1>
 
-        <p className="text-lg sm:text-xl text-white/90 max-w-2xl mx-auto leading-relaxed drop-shadow mb-8">
+        <p className="text-base sm:text-xl text-white/90 max-w-2xl mx-auto leading-relaxed drop-shadow mb-6">
           Låt oss ta hand om städningen. Du får mer tid över – vi levererar alltid hög kvalitet och arbetar med miljövänliga produkter.
         </p>
 
         {/* Stats */}
-        <div className="grid grid-cols-3 gap-3 max-w-md mx-auto mb-8">
-          <div className="bg-white/10 backdrop-blur-md rounded-xl p-3 border border-white/25">
-            <div className="text-2xl font-bold">100+</div>
+        <div className="grid grid-cols-3 gap-2 sm:gap-3 max-w-xs sm:max-w-md mx-auto mb-6 sm:mb-8">
+          <div className="bg-white/10 backdrop-blur-md rounded-xl p-2 sm:p-3 border border-white/25">
+            <div className="text-xl sm:text-2xl font-bold">100+</div>
             <div className="text-xs text-white/80 mt-0.5">Nöjda kunder</div>
           </div>
-          <div className="bg-white/10 backdrop-blur-md rounded-xl p-3 border border-white/25">
-            <div className="text-2xl font-bold">10+</div>
+          <div className="bg-white/10 backdrop-blur-md rounded-xl p-2 sm:p-3 border border-white/25">
+            <div className="text-xl sm:text-2xl font-bold">10+</div>
             <div className="text-xs text-white/80 mt-0.5">År erfarenhet</div>
           </div>
-          <div className="bg-white/10 backdrop-blur-md rounded-xl p-3 border border-white/25">
-            <div className="text-2xl font-bold">24h</div>
+          <div className="bg-white/10 backdrop-blur-md rounded-xl p-2 sm:p-3 border border-white/25">
+            <div className="text-xl sm:text-2xl font-bold">24h</div>
             <div className="text-xs text-white/80 mt-0.5">Garantisvar</div>
           </div>
         </div>
 
         {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Link href="/kontakt#offert">
-            <Button size="lg" className="shadow-xl">
+        <div className="flex flex-col sm:flex-row gap-3 justify-center">
+          <Link href="/kontakt#offert" className="w-full sm:w-auto">
+            <Button size="lg" className="shadow-xl w-full sm:w-auto">
               Få kostnadsfri offert
             </Button>
           </Link>
-          <Link href="/tjanster">
-            <button className="px-8 py-3 rounded-lg text-lg font-semibold border-2 border-white text-white hover:bg-white/15 transition-colors">
+          <Link href="/tjanster" className="w-full sm:w-auto">
+            <button className="w-full px-8 py-3 rounded-lg text-base sm:text-lg font-semibold border-2 border-white text-white hover:bg-white/15 transition-colors">
               Se alla tjänster
             </button>
           </Link>

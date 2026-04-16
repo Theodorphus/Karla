@@ -40,11 +40,11 @@ export function Header() {
               priority
             />
           </div>
-          <div className="hidden sm:flex flex-col leading-snug">
-            <span className="font-extrabold tracking-tight text-brand-green text-[17px] leading-none transition-colors duration-200">
+          <div className="flex flex-col leading-snug">
+            <span className="font-extrabold tracking-tight text-brand-green text-[15px] sm:text-[17px] leading-none transition-colors duration-200">
               Karla Cleaning Crew
             </span>
-            <span className="text-[11px] text-[#1A1A1A]/70 font-semibold tracking-widest uppercase mt-0.5">
+            <span className="hidden sm:block text-[11px] text-[#1A1A1A]/70 font-semibold tracking-widest uppercase mt-0.5">
               Proffsig Städservice
             </span>
           </div>

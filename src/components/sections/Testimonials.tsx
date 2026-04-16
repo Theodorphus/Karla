@@ -36,14 +36,14 @@ const TESTIMONIALS = [
 
 export function Testimonials() {
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+    <section className="py-10 sm:py-20 px-4 sm:px-6 lg:px-8 bg-white">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-[#1A1A1A] mb-4 tracking-tight">
+        <div className="text-center mb-10 sm:mb-16">
+          <h2 className="text-2xl sm:text-4xl font-extrabold text-[#1A1A1A] mb-3 sm:mb-4 tracking-tight">
             Det säger våra kunder
           </h2>
-          <p className="text-lg text-gray-700 max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg text-gray-700 max-w-2xl mx-auto">
             Vi är stolta över det förtroende våra kunder visar oss dag efter dag.
           </p>
         </div>

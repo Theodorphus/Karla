@@ -16,18 +16,18 @@ export function ServicesGrid() {
   }
 
   return (
-    <section className="py-24 px-4 sm:px-6 lg:px-8 bg-white">
+    <section className="py-12 sm:py-24 px-4 sm:px-6 lg:px-8 bg-white">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-20">
-          <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4 tracking-tight">
+        <div className="text-center mb-10 sm:mb-20">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 tracking-tight">
             Sex specialiserade tjänster
           </h2>
-          <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className="text-base sm:text-xl text-gray-600 max-w-2xl mx-auto">
             Från hemmet till kontoret – vi städar allt. Professionell städning för Göteborg.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-8">
           {SERVICES.map((service) => {
             const imageName = serviceImageMap[service.slug]
             const imageUrl = imageName ? `/images/services/${imageName}` : null
@@ -62,7 +62,7 @@ export function ServicesGrid() {
                   </div>
 
                   {/* Content */}
-                  <div className="flex flex-col flex-grow p-7 sm:p-8">
+                  <div className="flex flex-col flex-grow p-5 sm:p-8">
                     <h3 className="text-2xl sm:text-2xl font-bold text-gray-900 mb-4 group-hover:text-brand-green transition-colors duration-200">
                       {service.title}
                     </h3>
