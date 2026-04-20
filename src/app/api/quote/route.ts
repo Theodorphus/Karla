@@ -11,7 +11,7 @@ export async function POST(request: NextRequest) {
     const result = quoteSchema.safeParse(body)
     if (!result.success) {
       return NextResponse.json(
-        { error: 'Ogiltiga fältdata', details: result.error.flatten() },
+        { error: 'Ogiltiga fältdata', details: result.error.issues },
         { status: 400 }
       )
     }
@@ -19,6 +19,8 @@ export async function POST(request: NextRequest) {
     const data = result.data
 
     
+    const namn = [data.fornamn, data.efternamn].filter(Boolean).join(' ')
+
     const lines = [
       `<h2>Ny offertförfrågan</h2>`,
       `<p><strong>Tjänst:</strong> ${data.tjanst}</p>`,
@@ -28,11 +30,11 @@ export async function POST(request: NextRequest) {
       data.boendetyp ? `<p><strong>Boendetyp:</strong> ${data.boendetyp}</p>` : '',
       data.frekvens ? `<p><strong>Frekvens:</strong> ${data.frekvens}</p>` : '',
       `<hr/>`,
-      `<p><strong>Adress:</strong> ${data.gatuadress}, ${data.postnummer} ${data.ort}</p>`,
-      `<p><strong>Datum:</strong> ${data.datum}</p>`,
+      `<p><strong>Område:</strong> ${data.postnummer} ${data.ort}</p>`,
+      data.datum ? `<p><strong>Datum:</strong> ${data.datum}</p>` : '',
       `<p><strong>Tid:</strong> ${data.tid}</p>`,
       `<hr/>`,
-      `<p><strong>Namn:</strong> ${data.fornamn} ${data.efternamn}</p>`,
+      `<p><strong>Namn:</strong> ${namn}</p>`,
       `<p><strong>Telefon:</strong> ${data.telefon}</p>`,
       `<p><strong>E-post:</strong> ${data.email}</p>`,
       data.meddelande ? `<p><strong>Meddelande:</strong> ${data.meddelande}</p>` : '',
@@ -40,11 +42,13 @@ export async function POST(request: NextRequest) {
       .filter(Boolean)
       .join('\n')
 
+    const recipient = process.env.RESEND_TO_OVERRIDE ?? 'info@karlacleaningcrew.se'
+
     const { data: sendData, error: sendError } = await resend.emails.send({
-      from: 'no-reply@karlacleaningcrew.se',
-      to: 'info@karlacleaningcrew.se',
+      from: process.env.RESEND_FROM ?? 'onboarding@resend.dev',
+      to: recipient,
       replyTo: data.email,
-      subject: `Offertförfrågan – ${data.tjanst} – ${data.fornamn} ${data.efternamn}`,
+      subject: `Offertförfrågan – ${data.tjanst} – ${namn}`,
       html: lines,
     })
 

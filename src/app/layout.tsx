@@ -108,10 +108,6 @@ export const metadata: Metadata = {
     },
   },
 
-  // Canonical URL
-  alternates: {
-    canonical: siteUrl,
-  },
 }
 
 export const viewport: Viewport = {

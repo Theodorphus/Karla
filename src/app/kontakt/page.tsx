@@ -158,6 +158,12 @@ export default function KontaktPage() {
               <p className="text-gray-500 text-sm">
                 3 enkla steg — vi svarar med ett personligt pris inom 24 timmar.
               </p>
+              <p className="text-sm text-gray-500 mt-2">
+                Föredrar du att ringa?{' '}
+                <a href="tel:+46707402080" className="font-semibold text-navy underline hover:text-petrol">
+                  070 740 20 80
+                </a>
+              </p>
             </div>
             <QuoteForm />
           </div>

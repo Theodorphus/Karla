@@ -44,17 +44,16 @@ export const quoteSchema = z
     foretagsnamn: z.string().optional(),
 
     // Step 2
-    gatuadress: z.string().min(3, 'Ange gatuadress'),
     postnummer: z
       .string()
       .regex(/^\d{3}\s?\d{2}$/, 'Ange giltigt postnummer (t.ex. 417 51)'),
     ort: z.string().min(2, 'Ange ort'),
-    datum: z.string().min(1, 'Välj ett datum'),
+    datum: z.string().optional(),
     tid: z.enum(['formiddag', 'eftermiddag', 'flexibel'], { message: 'Välj önskad tid' }),
 
     // Step 3
     fornamn: z.string().min(2, 'Ange ditt förnamn'),
-    efternamn: z.string().min(2, 'Ange ditt efternamn'),
+    efternamn: z.string().optional(),
     telefon: z
       .string()
       .min(7, 'Ange telefonnummer')

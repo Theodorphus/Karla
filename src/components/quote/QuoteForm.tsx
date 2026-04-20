@@ -223,21 +223,6 @@ function Step2({ register, errors }: Step2Props) {
 
   return (
     <div className="space-y-5">
-      <div>
-        <label htmlFor="gatuadress" className="block text-sm font-semibold text-gray-700 mb-2">
-          Gatuadress <span className="text-red-500">*</span>
-        </label>
-        <input
-          type="text"
-          id="gatuadress"
-          {...register('gatuadress')}
-          className={inputCls}
-          placeholder="Storgatan 1"
-          autoComplete="street-address"
-        />
-        <FieldError message={errors.gatuadress?.message} />
-      </div>
-
       <div className="grid grid-cols-2 gap-4">
         <div>
           <label htmlFor="postnummer" className="block text-sm font-semibold text-gray-700 mb-2">
@@ -272,7 +257,8 @@ function Step2({ register, errors }: Step2Props) {
 
       <div>
         <label htmlFor="datum" className="block text-sm font-semibold text-gray-700 mb-2">
-          Önskat datum <span className="text-red-500">*</span>
+          Önskat datum{' '}
+          <span className="text-gray-400 font-normal">(valfritt)</span>
         </label>
         <input
           type="date"
@@ -281,7 +267,7 @@ function Step2({ register, errors }: Step2Props) {
           className={inputCls}
           min={minDate}
         />
-        <p className="text-xs text-gray-500 mt-1">Vi bekräftar tillgänglighet inom 24h.</p>
+        <p className="text-xs text-gray-500 mt-1">Inget datum ännu? Vi diskuterar det i vår uppföljning.</p>
         <FieldError message={errors.datum?.message} />
       </div>
 
@@ -333,7 +319,8 @@ function Step3({ register, errors }: Step3Props) {
         </div>
         <div>
           <label htmlFor="efternamn" className="block text-sm font-semibold text-gray-700 mb-2">
-            Efternamn <span className="text-red-500">*</span>
+            Efternamn{' '}
+            <span className="text-gray-400 font-normal">(valfritt)</span>
           </label>
           <input
             type="text"
@@ -401,14 +388,14 @@ function Step3({ register, errors }: Step3Props) {
             aria-describedby="gdpr-desc"
           />
           <span id="gdpr-desc" className="text-sm text-gray-600 leading-relaxed">
-            Jag godkänner att Karla Cleaning Crew hanterar mina uppgifter enligt{' '}
+            Jag godkänner att mina uppgifter används för att besvara min förfrågan. Se vår{' '}
             <a
               href="/integritetspolicy"
               className="text-petrol underline hover:text-navy"
             >
-              integritetspolicyn
-            </a>{' '}
-            för att besvara min förfrågan. <span className="text-red-500">*</span>
+              integritetspolicy
+            </a>
+            . <span className="text-red-500">*</span>
           </span>
         </label>
         <FieldError message={errors.gdpr?.message} />
@@ -427,8 +414,8 @@ function Step3({ register, errors }: Step3Props) {
 
 const STEP_FIELDS: (keyof QuoteFormData)[][] = [
   ['tjanst', 'kvm', 'antalFonster', 'frekvens', 'foretagsnamn'],
-  ['gatuadress', 'postnummer', 'ort', 'datum', 'tid'],
-  ['fornamn', 'efternamn', 'telefon', 'email', 'gdpr'],
+  ['postnummer', 'ort', 'tid'],
+  ['fornamn', 'telefon', 'email', 'gdpr'],
 ]
 
 // ─── Main component ───────────────────────────────────────────────────────────
