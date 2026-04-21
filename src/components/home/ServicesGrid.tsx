@@ -20,7 +20,7 @@ export function ServicesGrid() {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-10 sm:mb-20">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 tracking-tight">
-            Sex specialiserade tjänster
+            6 specialiserade tjänster
           </h2>
           <p className="text-base sm:text-xl text-gray-600 max-w-2xl mx-auto">
             Från hemmet till kontoret – vi städar allt. Professionell städning för Göteborg.

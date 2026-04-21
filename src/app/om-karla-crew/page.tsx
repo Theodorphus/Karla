@@ -1,4 +1,5 @@
 import { Metadata } from 'next'
+import Image from 'next/image'
 import { SectionWrapper } from '@/components/ui/SectionWrapper'
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs'
 import { TEAM } from '@/lib/data/team'
@@ -113,20 +114,26 @@ export default function OmKarlaCrew() {
             Vi är ett dedikerat team av professionella städare som brinner för att leverera utmärkt resultat.
             Alla våra städare är tränade, försäkrade och engagerade i ditt nöje.
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="flex flex-wrap justify-center gap-8">
             {TEAM.map((member) => (
-              <div key={member.name} className="text-center bg-white p-8 rounded-2xl border border-gray-200 hover:border-brand-green/50 hover:shadow-lg transition-all duration-300">
-                <div className="bg-brand-green text-white w-24 h-24 rounded-full mx-auto mb-5 flex items-center justify-center text-3xl font-bold shadow-md">
-                  {member.name.charAt(0)}
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">{member.name}</h3>
-                <p className="text-brand-green font-bold mb-4 text-base">{member.role}</p>
+              <div key={member.name} className="text-center bg-white p-8 rounded-2xl border border-gray-200 hover:border-brand-green/50 hover:shadow-lg transition-all duration-300 w-full sm:w-72">
+                {member.image ? (
+                  <div className="w-24 h-24 rounded-full mx-auto mb-5 overflow-hidden shadow-md">
+                    <Image src={member.image} alt={member.name} width={96} height={96} className="object-cover w-full h-auto" />
+                  </div>
+                ) : (
+                  <div className="bg-brand-green text-white w-24 h-24 rounded-full mx-auto mb-5 flex items-center justify-center text-3xl font-bold shadow-md">
+                    {member.name.charAt(0)}
+                  </div>
+                )}
+                <h3 className="text-xl font-bold text-gray-900 mb-1">{member.name}</h3>
+                <p className="text-brand-green font-semibold mb-4 text-sm uppercase tracking-wide">{member.role}</p>
                 {member.phone && (
                   <a
                     href={`tel:${member.phone}`}
-                    className="text-gray-700 hover:text-brand-green transition-colors font-semibold text-lg"
+                    className="inline-flex items-center gap-2 text-gray-600 hover:text-brand-green transition-colors font-medium text-base"
                   >
-                    {member.phone}
+                    📞 {member.phone}
                   </a>
                 )}
               </div>
