@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { Button } from '@/components/ui/Button'
 
 interface HeroSectionProps {
@@ -17,10 +18,13 @@ export function HeroSection({
       {/* Background Image */}
       {imageSrc && (
         <>
-          <img
+          <Image
             src={imageSrc}
             alt={title}
-            className="absolute inset-0 w-full h-full object-cover"
+            fill
+            className="object-cover"
+            priority
+            sizes="100vw"
           />
           {/* Dark Overlay - Gradient for text readability */}
           <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/30"></div>

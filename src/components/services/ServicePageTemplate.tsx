@@ -1,12 +1,12 @@
-'use client'
-
-import { CheckCircle } from 'lucide-react'
+import Link from 'next/link'
+import { CheckCircle, Phone } from 'lucide-react'
 import { HeroSection } from './HeroSection'
 import { WhatIncludedSection } from './WhatIncludedSection'
 import { FAQSection } from './FAQSection'
 import { RelatedServicesSection } from './RelatedServicesSection'
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs'
 import { CTABanner } from '@/components/home/CTABanner'
+import { Button } from '@/components/ui/Button'
 import { ServiceData } from '@/types/service'
 import { SERVICES } from '@/lib/data/services'
 
@@ -68,6 +68,29 @@ export function ServicePageTemplate({ service }: ServicePageTemplateProps) {
           </div>
         </section>
       )}
+
+      {/* Inline CTA strip */}
+      <div className="bg-navy py-5 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p className="text-white font-semibold text-base sm:text-lg text-center sm:text-left">
+            Kostnadsfri offert – svar inom 24 timmar, ingen bindningstid.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-3 flex-shrink-0">
+            <Link href="/kontakt#offert">
+              <Button size="lg" className="w-full sm:w-auto font-bold">
+                Få offert
+              </Button>
+            </Link>
+            <a
+              href="tel:+46707402080"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg border-2 border-white text-white font-semibold hover:bg-white/10 transition-colors text-base"
+            >
+              <Phone size={16} />
+              070 740 20 80
+            </a>
+          </div>
+        </div>
+      </div>
 
       {/* What's Included Section */}
       <WhatIncludedSection items={service.included} />

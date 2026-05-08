@@ -24,11 +24,11 @@ export function Footer() {
                 <span>+46 707 40 20 80</span>
               </a>
               <a
-                href="mailto:Info@karlacleaningcrew.se"
+                href="mailto:info@karlacleaningcrew.se"
                 className="flex items-center gap-3 text-sm text-gray-700 hover:text-[#2E7D32] transition-colors"
               >
                 <Mail size={16} className="text-[#2E7D32] flex-shrink-0" />
-                <span>Info@karlacleaningcrew.se</span>
+                <span>info@karlacleaningcrew.se</span>
               </a>
             </div>
 
@@ -64,18 +64,13 @@ export function Footer() {
 
             <h4 className="text-[#2E7D32] font-semibold mb-5">Tjänster</h4>
             <ul className="space-y-2">
-              {SERVICES_NAV.slice(0, 3).map((service) => (
+              {SERVICES_NAV.map((service) => (
                 <li key={service.href}>
                   <Link href={service.href} className="text-sm text-gray-600 hover:text-[#2E7D32] transition-colors">
                     {service.label}
                   </Link>
                 </li>
               ))}
-              <li>
-                <Link href="/tjanster" className="text-sm text-[#2E7D32] font-semibold hover:text-[#1B5E20] transition-colors">
-                  Se alla tjänster →
-                </Link>
-              </li>
             </ul>
           </div>
 

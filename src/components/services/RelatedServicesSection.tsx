@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { ServiceData } from '@/types/service'
 import { serviceIcons } from '@/lib/data/serviceIcons'
 
@@ -49,10 +50,12 @@ export function RelatedServicesSection({
               <div className="group h-full overflow-hidden rounded-xl bg-white shadow-subtle border border-gray-100 hover:border-brand-green/30 hover:shadow-medium transition-all duration-300 flex flex-col">
                 {/* Image Container */}
                 <div className="relative h-56 overflow-hidden bg-gradient-to-br from-gray-100 to-gray-50">
-                  <img
+                  <Image
                     src={service.imageSrc}
                     alt={service.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-300"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   />
                   {/* Overlay on hover */}
                   <div className="absolute inset-0 bg-brand-green/0 group-hover:bg-brand-green/10 transition-colors duration-300" />

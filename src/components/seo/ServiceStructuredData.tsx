@@ -15,18 +15,7 @@ export function ServiceStructuredData({ service, slug }: ServiceStructuredDataPr
     name: service.title,
     description: service.description,
     provider: {
-      '@type': 'LocalBusiness',
-      name: 'Karla Cleaning Crew',
-      url: baseUrl,
-      telephone: '+46707402080',
-      email: 'info@karlacleaningcrew.se',
-      address: {
-        '@type': 'PostalAddress',
-        streetAddress: 'Lodjursstråket 1',
-        addressLocality: 'Göteborg',
-        postalCode: '417 51',
-        addressCountry: 'SE',
-      },
+      '@id': `${baseUrl}/#business`,
     },
     areaServed: [
       { '@type': 'City', name: 'Göteborg' },

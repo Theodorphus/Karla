@@ -14,7 +14,6 @@ export const TEAM: TeamMember[] = [
   {
     name: 'Niclas Melin',
     role: 'Business Developer',
-    phone: '+46 705752219',
     image: '/images/Niclas12.png',
   },
 ]

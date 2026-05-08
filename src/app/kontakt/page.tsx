@@ -23,9 +23,30 @@ export const metadata: Metadata = {
   },
 }
 
+function ContactPageStructuredData() {
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'ContactPage',
+    name: 'Kontakt – Karla Cleaning Crew',
+    url: 'https://karlacleaningcrew.se/kontakt',
+    description: 'Kontakta Karla Cleaning Crew för en kostnadsfri offert på städning i Göteborg.',
+    mainEntity: {
+      '@id': 'https://karlacleaningcrew.se/#business',
+    },
+  }
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  )
+}
+
 export default function KontaktPage() {
   return (
     <>
+      <ContactPageStructuredData />
+
       {/* Breadcrumbs */}
       <Breadcrumbs
         items={[
@@ -72,10 +93,10 @@ export default function KontaktPage() {
                 <h3 className="font-semibold text-gray-900">E-post</h3>
               </div>
               <a
-                href="mailto:Info@karlacleaningcrew.se"
+                href="mailto:info@karlacleaningcrew.se"
                 className="text-navy hover:text-petrol break-all ml-8"
               >
-                Info@karlacleaningcrew.se
+                info@karlacleaningcrew.se
               </a>
             </div>
 

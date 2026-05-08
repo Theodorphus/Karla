@@ -18,9 +18,11 @@ export async function POST(request: NextRequest) {
 
     const { namn, telefon, email, kommentar } = result.data
 
-    await resend.emails.send({
-      from: 'no-reply@karlacleaningcrew.se',
-      to: 'info@karlacleaningcrew.se',
+    const recipient = process.env.RESEND_TO_OVERRIDE ?? 'info@karlacleaningcrew.se'
+
+    const { error: sendError } = await resend.emails.send({
+      from: process.env.RESEND_FROM ?? 'onboarding@resend.dev',
+      to: recipient,
       replyTo: email,
       subject: `Nytt meddelande från ${namn}`,
       html: [
@@ -33,6 +35,11 @@ export async function POST(request: NextRequest) {
         .filter(Boolean)
         .join('\n'),
     })
+
+    if (sendError) {
+      console.error('Resend error:', sendError)
+      return NextResponse.json({ error: 'E-post kunde inte skickas.' }, { status: 500 })
+    }
 
     return NextResponse.json({ success: true, message: 'Din förfrågan har mottagits' }, { status: 200 })
   } catch (error) {
