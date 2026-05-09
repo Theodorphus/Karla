@@ -426,7 +426,6 @@ export function QuoteForm() {
   const [success, setSuccess] = useState(false)
   const [submitError, setSubmitError] = useState('')
 
-  // zodResolver type is incompatible between @hookform/resolvers v5 and zod v4 — safe cast
   const {
     register,
     handleSubmit,
@@ -438,8 +437,7 @@ export function QuoteForm() {
     trigger,
     formState: { errors },
     reset,
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  } = useForm<QuoteFormData>({ resolver: zodResolver(quoteSchema) as any, mode: 'onTouched' })
+  } = useForm<QuoteFormData>({ resolver: zodResolver(quoteSchema), mode: 'onTouched' })
 
   // Step 0 uses manual validation because superRefine doesn't fire
   // reliably during field-level trigger() with zodResolver v5 + Zod v4.
@@ -500,8 +498,7 @@ export function QuoteForm() {
     if (valid) setStep((s) => s + 1)
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const onSubmit: SubmitHandler<any> = async (data: QuoteFormData) => {
+  const onSubmit: SubmitHandler<QuoteFormData> = async (data) => {
     setIsLoading(true)
     setSubmitError('')
     try {

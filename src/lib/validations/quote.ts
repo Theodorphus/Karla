@@ -60,7 +60,6 @@ export const quoteSchema = z
       .regex(/^[\d\s+\-()]+$/, 'Ogiltigt telefonnummer'),
     email: z.string().email('Ange en giltig e-postadress'),
     meddelande: z.string().max(1000).optional(),
-    // Zod v4: z.literal(true) — use message string directly
     gdpr: z.literal(true, 'Du måste godkänna vår integritetspolicy'),
   })
   .superRefine((data, ctx) => {
