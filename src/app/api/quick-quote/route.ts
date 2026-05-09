@@ -9,6 +9,7 @@ const quickQuoteSchema = z.object({
   postnummer: z.string().regex(/^\d{3}\s?\d{2}$/),
   fornamn: z.string().min(2),
   telefon: z.string().min(7).regex(/^[\d\s+\-()]+$/),
+  beskrivning: z.string().max(1000).optional(),
 })
 
 export async function POST(request: NextRequest) {
@@ -20,7 +21,7 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: 'Ogiltiga fältdata' }, { status: 400 })
     }
 
-    const { tjanst, postnummer, fornamn, telefon } = result.data
+    const { tjanst, postnummer, fornamn, telefon, beskrivning } = result.data
 
     const html = [
       `<h2>Snabboffert från startsidan</h2>`,
@@ -28,7 +29,8 @@ export async function POST(request: NextRequest) {
       `<p><strong>Postnummer:</strong> ${postnummer}</p>`,
       `<p><strong>Namn:</strong> ${fornamn}</p>`,
       `<p><strong>Telefon:</strong> ${telefon}</p>`,
-    ].join('\n')
+      beskrivning ? `<p><strong>Beskrivning:</strong> ${beskrivning}</p>` : '',
+    ].filter(Boolean).join('\n')
 
     const recipient = process.env.RESEND_TO_OVERRIDE ?? 'info@karlacleaningcrew.se'
 

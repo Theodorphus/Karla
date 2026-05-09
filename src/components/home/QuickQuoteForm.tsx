@@ -15,9 +15,10 @@ interface QuickFormState {
   postnummer: string
   fornamn: string
   telefon: string
+  beskrivning: string
 }
 
-const empty: QuickFormState = { tjanst: '', postnummer: '', fornamn: '', telefon: '' }
+const empty: QuickFormState = { tjanst: '', postnummer: '', fornamn: '', telefon: '', beskrivning: '' }
 
 export function QuickQuoteForm() {
   const [form, setForm] = useState<QuickFormState>(empty)
@@ -183,6 +184,21 @@ export function QuickQuoteForm() {
             {errors.telefon}
           </p>
         )}
+      </div>
+
+      {/* Beskrivning */}
+      <div>
+        <label htmlFor="qq-beskrivning" className="block text-sm font-semibold text-gray-700 mb-1">
+          Beskrivning
+        </label>
+        <textarea
+          id="qq-beskrivning"
+          value={form.beskrivning}
+          onChange={(e) => setForm((f) => ({ ...f, beskrivning: e.target.value }))}
+          className={inputCls + ' resize-none'}
+          placeholder="Beskriv gärna vad du behöver hjälp med..."
+          rows={3}
+        />
       </div>
 
       {serverError && (
