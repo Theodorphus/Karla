@@ -141,6 +141,14 @@ export function ContactForm() {
       <Button type="submit" size="lg" disabled={isLoading} className="w-full font-bold">
         {isLoading ? 'Skickar...' : 'Skicka förfrågan'}
       </Button>
+
+      <p className="text-center text-xs text-gray-400 leading-relaxed">
+        Genom att skicka godkänner du att vi behandlar dina uppgifter enligt vår{' '}
+        <a href="/integritetspolicy" className="underline hover:text-brand-green">
+          integritetspolicy
+        </a>
+        .
+      </p>
     </form>
   )
 }

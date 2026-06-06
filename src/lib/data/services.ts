@@ -82,6 +82,7 @@ export const SERVICES: ServiceData[] = [
     rutEligible: false,
     ecoFriendly: true,
     imageSrc: '/images/services/flyttstad_hero.png',
+    imageObjectPosition: 'center 30%',
     keyPoints: [
       {
         title: 'Mäklarsamfundets standard',
@@ -261,7 +262,7 @@ export const SERVICES: ServiceData[] = [
     ],
     rutEligible: false,
     ecoFriendly: true,
-    imageSrc: '/images/services/L1.Hero.png',
+    imageSrc: '/images/services/kontorsstadning_hero.png',
     keyPoints: [
       {
         title: 'Fast kontaktperson',
@@ -324,6 +325,7 @@ export const SERVICES: ServiceData[] = [
     rutEligible: false,
     ecoFriendly: true,
     imageSrc: '/images/services/lokalvard_hero.png',
+    imageObjectPosition: 'center 30%',
     keyPoints: [
       {
         title: 'Anpassade städscheman',

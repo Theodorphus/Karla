@@ -1,34 +1,39 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import { Button } from '@/components/ui/Button'
+import { Button, buttonClasses } from '@/components/ui/Button'
+import { ParallaxFrame } from '@/components/premium/Effects'
 
 interface HeroSectionProps {
   title: string
   tagline: string
   imageSrc?: string
+  /** object-position för bilden, t.ex. 'center 30%'. Default 'center'. */
+  imageObjectPosition?: string
 }
 
 export function HeroSection({
   title,
   tagline,
   imageSrc,
+  imageObjectPosition = 'center',
 }: HeroSectionProps) {
   return (
     <section className="relative overflow-hidden h-[600px] flex items-center justify-center">
-      {/* Background Image */}
+      {/* Background Image with subtle scroll-parallax */}
       {imageSrc && (
-        <>
+        <ParallaxFrame speed={70} className="absolute inset-0">
           <Image
             src={imageSrc}
             alt={title}
             fill
             className="object-cover"
+            style={{ objectPosition: imageObjectPosition }}
             priority
             sizes="100vw"
           />
           {/* Dark Overlay - Gradient for text readability */}
           <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/30"></div>
-        </>
+        </ParallaxFrame>
       )}
 
       {/* Content */}
@@ -91,7 +96,7 @@ export function HeroSection({
           </Link>
           <a
             href="tel:+46707402080"
-            className="inline-flex items-center justify-center font-semibold rounded-lg transition-all duration-200 whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-0 text-white border-2 border-white hover:bg-white hover:text-[#2E7D32] active:bg-white/90 px-8 py-3 text-lg shadow-md"
+            className={buttonClasses({ variant: 'outline-white', size: 'lg' })}
           >
             Ring oss
           </a>

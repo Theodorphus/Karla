@@ -6,9 +6,10 @@ import { FAQSection } from './FAQSection'
 import { RelatedServicesSection } from './RelatedServicesSection'
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs'
 import { CTABanner } from '@/components/home/CTABanner'
-import { Button } from '@/components/ui/Button'
+import { Button, buttonClasses } from '@/components/ui/Button'
 import { ServiceData } from '@/types/service'
 import { SERVICES } from '@/lib/data/services'
+import { Stagger } from '@/components/premium/Scroll'
 
 interface ServicePageTemplateProps {
   service: ServiceData
@@ -44,13 +45,14 @@ export function ServicePageTemplate({ service }: ServicePageTemplateProps) {
         title={service.title}
         tagline={service.heroTagline}
         imageSrc={service.imageSrc}
+        imageObjectPosition={service.imageObjectPosition}
       />
 
       {/* Key Points Row — 3 key benefits specific to this service */}
       {service.keyPoints && service.keyPoints.length > 0 && (
         <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
           <div className="max-w-6xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <Stagger className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {service.keyPoints.map((point, i) => (
                 <div key={i} className="flex gap-4 items-start">
                   <CheckCircle size={28} className="text-brand-green flex-shrink-0 mt-1" strokeWidth={2.5} />
@@ -64,7 +66,7 @@ export function ServicePageTemplate({ service }: ServicePageTemplateProps) {
                   </div>
                 </div>
               ))}
-            </div>
+            </Stagger>
           </div>
         </section>
       )}
@@ -83,7 +85,7 @@ export function ServicePageTemplate({ service }: ServicePageTemplateProps) {
             </Link>
             <a
               href="tel:+46707402080"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg border-2 border-white text-white font-semibold hover:bg-white/10 transition-colors text-base"
+              className={buttonClasses({ variant: 'outline-white', size: 'md', className: 'gap-2' })}
             >
               <Phone size={16} />
               070 740 20 80

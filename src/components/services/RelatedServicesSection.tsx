@@ -2,6 +2,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { ServiceData } from '@/types/service'
 import { serviceIcons } from '@/lib/data/serviceIcons'
+import { Reveal, Stagger } from '@/components/premium/Scroll'
 
 interface RelatedServicesSectionProps {
   relatedServices: ServiceData[]
@@ -34,20 +35,20 @@ export function RelatedServicesSection({
     <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gray-50">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-20">
+        <Reveal className="text-center mb-20">
           <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4 tracking-tight">
             Våra andra tjänster
           </h2>
           <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto">
             Utforska allt vi erbjuder för att hålla ditt hem eller kontor rent
           </p>
-        </div>
+        </Reveal>
 
         {/* 3-Column Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <Stagger itemClassName="h-full" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filtered.map((service) => (
-            <Link key={service.slug} href={`/${service.slug}`}>
-              <div className="group h-full overflow-hidden rounded-xl bg-white shadow-subtle border border-gray-100 hover:border-brand-green/30 hover:shadow-medium transition-all duration-300 flex flex-col">
+            <Link key={service.slug} href={`/${service.slug}`} className="h-full">
+              <div className="card-lift card-sheen group h-full overflow-hidden rounded-xl bg-white shadow-subtle border border-gray-100 hover:border-brand-green/30 hover:shadow-medium transition-all duration-300 flex flex-col">
                 {/* Image Container */}
                 <div className="relative h-56 overflow-hidden bg-gradient-to-br from-gray-100 to-gray-50">
                   <Image
@@ -99,7 +100,7 @@ export function RelatedServicesSection({
               </div>
             </Link>
           ))}
-        </div>
+        </Stagger>
       </div>
     </section>
   )

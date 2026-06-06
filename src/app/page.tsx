@@ -35,7 +35,7 @@ export default function Home() {
               Få ett prisförslag på 24 timmar
             </h2>
             <p className="text-gray-600 text-base sm:text-lg mb-8 leading-relaxed">
-              Fyll i fyra fält – vi återkommer med ett personligt pris. Inga dolda avgifter, ingen bindningstid.
+              Fyll i några snabba fält – vi återkommer med ett personligt pris. Inga dolda avgifter, ingen bindningstid.
             </p>
             <ul className="space-y-3 text-sm">
               <li className="flex items-center gap-3">

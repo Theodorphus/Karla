@@ -10,6 +10,7 @@
  */
 
 import { CheckCircle } from 'lucide-react'
+import { Reveal, Stagger } from '@/components/premium/Scroll'
 
 interface IncludedItem {
   title: string
@@ -40,7 +41,7 @@ export function WhatIncludedSection({
     <section className="py-24 px-4 sm:px-6 lg:px-8 bg-white">
       <div className="max-w-5xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-14">
+        <Reveal className="text-center mb-14">
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-3 tracking-tight">
             {title}
           </h2>
@@ -49,14 +50,14 @@ export function WhatIncludedSection({
               {subtitle}
             </p>
           )}
-        </div>
+        </Reveal>
 
         {/* Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <Stagger step={60} itemClassName="h-full" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {normalizedItems.map((item, index) => (
             <div
               key={index}
-              className="flex items-start gap-4 p-5 bg-[#F7F7F7] rounded-xl border border-[#E5E5E5] hover:border-navy/20 hover:shadow-subtle transition-all duration-200"
+              className="flex h-full items-start gap-4 p-5 bg-[#F7F7F7] rounded-xl border border-[#E5E5E5] hover:border-navy/20 hover:shadow-subtle transition-all duration-200"
             >
               {/* Icon container */}
               <div className="flex-shrink-0 w-9 h-9 rounded-lg bg-white border border-[#E5E5E5] flex items-center justify-center shadow-subtle">
@@ -76,7 +77,7 @@ export function WhatIncludedSection({
               </div>
             </div>
           ))}
-        </div>
+        </Stagger>
       </div>
     </section>
   )

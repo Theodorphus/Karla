@@ -3,6 +3,7 @@ import Image from 'next/image'
 import { Badge } from '@/components/ui/Badge'
 import { SERVICES } from '@/lib/data/services'
 import { serviceIcons } from '@/lib/data/serviceIcons'
+import { Reveal, Stagger } from '@/components/premium/Scroll'
 
 export function ServicesGrid() {
   // Map service slugs to generated image names
@@ -11,30 +12,30 @@ export function ServicesGrid() {
     flyttstad: 'flyttstad_hero.png',
     fonsterputs: 'fonsterputs_hero.png',
     byggstad: 'byggstad_hero.png',
-    kontorsstadning: 'L1.Hero.png',
+    kontorsstadning: 'kontorsstadning_hero.png',
     lokalvard: 'lokalvard_hero.png',
   }
 
   return (
     <section className="py-12 sm:py-24 px-4 sm:px-6 lg:px-8 bg-white">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-10 sm:mb-20">
+        <Reveal className="text-center mb-10 sm:mb-20">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 tracking-tight">
             6 specialiserade tjänster
           </h2>
           <p className="text-base sm:text-xl text-gray-600 max-w-2xl mx-auto">
             Från hemmet till kontoret – vi städar allt. Professionell städning för Göteborg.
           </p>
-        </div>
+        </Reveal>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-8">
+        <Stagger itemClassName="h-full" className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-8">
           {SERVICES.map((service) => {
             const imageName = serviceImageMap[service.slug]
             const imageUrl = imageName ? `/images/services/${imageName}` : null
 
             return (
-              <Link key={service.slug} href={`/${service.slug}`}>
-                <div className="group overflow-hidden rounded-2xl shadow-md hover:shadow-2xl transition-all duration-300 cursor-pointer h-full flex flex-col bg-white border border-gray-200 hover:border-brand-green/40">
+              <Link key={service.slug} href={`/${service.slug}`} className="h-full">
+                <div className="card-lift card-sheen group overflow-hidden rounded-2xl shadow-md hover:shadow-2xl transition-all duration-300 cursor-pointer h-full flex flex-col bg-white border border-gray-200 hover:border-brand-green/40">
                   {/* Image Container */}
                   <div className="relative h-64 overflow-hidden bg-gradient-to-br from-gray-50 to-gray-100">
                     {imageUrl ? (
@@ -107,7 +108,7 @@ export function ServicesGrid() {
               </Link>
             )
           })}
-        </div>
+        </Stagger>
       </div>
     </section>
   )

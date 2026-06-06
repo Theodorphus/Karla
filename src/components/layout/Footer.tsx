@@ -130,8 +130,24 @@ export function Footer() {
         <div className="border-t border-gray-200" />
 
         {/* Copyright */}
-        <div className="pt-6 mt-6 text-center text-sm text-gray-400">
+        <div className="pt-6 mt-6 text-center text-sm text-gray-400 space-y-1">
+          <p>
+            <Link href="/integritetspolicy" className="hover:text-[#2E7D32] transition-colors">
+              Integritetspolicy
+            </Link>
+          </p>
           <p>&copy; {currentYear} Karla Cleaning Crew. Alla rättigheter förbehållna.</p>
+          <p>
+            Hemsida av{' '}
+            <a
+              href="https://www.webbdev.se/"
+              target="_blank"
+              rel="noopener"
+              className="font-medium text-gray-500 hover:text-[#2E7D32] transition-colors"
+            >
+              WebbDev
+            </a>
+          </p>
         </div>
       </div>
     </footer>

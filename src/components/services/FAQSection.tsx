@@ -9,6 +9,7 @@ import {
   AccordionContent,
 } from '@/components/ui/Accordion'
 import { FAQ } from '@/types/service'
+import { Reveal } from '@/components/premium/Scroll'
 
 interface FAQSectionProps {
   faqItems?: FAQ[]
@@ -35,7 +36,7 @@ export function FAQSection({
     <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gray-50">
       <div className="max-w-3xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-20">
+        <Reveal className="text-center mb-20">
           <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4 tracking-tight">
             {title}
           </h2>
@@ -44,7 +45,7 @@ export function FAQSection({
               {subtitle}
             </p>
           )}
-        </div>
+        </Reveal>
 
         {/* Accordion */}
         <div className="bg-white rounded-xl border border-gray-200 p-8 sm:p-10">

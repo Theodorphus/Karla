@@ -15,9 +15,18 @@ interface QuickFormState {
   postnummer: string
   fornamn: string
   telefon: string
+  email: string
+  meddelande: string
 }
 
-const empty: QuickFormState = { tjanst: '', postnummer: '', fornamn: '', telefon: '' }
+const empty: QuickFormState = {
+  tjanst: '',
+  postnummer: '',
+  fornamn: '',
+  telefon: '',
+  email: '',
+  meddelande: '',
+}
 
 export function QuickQuoteForm() {
   const [form, setForm] = useState<QuickFormState>(empty)
@@ -32,6 +41,10 @@ export function QuickQuoteForm() {
     if (!form.postnummer.match(/^\d{3}\s?\d{2}$/)) e.postnummer = 'Ogiltigt postnummer'
     if (form.fornamn.trim().length < 2) e.fornamn = 'Ange ditt namn'
     if (!form.telefon.match(/^[\d\s+\-()]{7,}$/)) e.telefon = 'Ange telefonnummer'
+    // E-post är valfri – validera bara om något fyllts i.
+    if (form.email.trim() && !form.email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
+      e.email = 'Ange en giltig e-postadress'
+    }
     setErrors(e)
     return Object.keys(e).length === 0
   }
@@ -185,6 +198,47 @@ export function QuickQuoteForm() {
         )}
       </div>
 
+      {/* E-post (valfri) */}
+      <div>
+        <label htmlFor="qq-email" className="block text-sm font-semibold text-gray-700 mb-1">
+          E-post <span className="text-gray-400 font-normal">(valfritt)</span>
+        </label>
+        <input
+          id="qq-email"
+          type="email"
+          value={form.email}
+          onChange={(e) => {
+            setForm((f) => ({ ...f, email: e.target.value }))
+            setErrors((er) => ({ ...er, email: undefined }))
+          }}
+          className={inputCls}
+          placeholder="anna@exempel.se"
+          autoComplete="email"
+        />
+        {errors.email && (
+          <p className="text-red-600 text-xs mt-1 flex items-center gap-1">
+            <AlertCircle size={12} />
+            {errors.email}
+          </p>
+        )}
+      </div>
+
+      {/* Meddelande (valfritt) */}
+      <div>
+        <label htmlFor="qq-meddelande" className="block text-sm font-semibold text-gray-700 mb-1">
+          Meddelande <span className="text-gray-400 font-normal">(valfritt)</span>
+        </label>
+        <textarea
+          id="qq-meddelande"
+          value={form.meddelande}
+          onChange={(e) => setForm((f) => ({ ...f, meddelande: e.target.value }))}
+          className={`${inputCls} min-h-[80px] resize-y`}
+          placeholder="Berätta gärna mer om dina önskemål …"
+          rows={3}
+          maxLength={1000}
+        />
+      </div>
+
       {serverError && (
         <div className="bg-red-50 border border-red-200 rounded-lg p-3 flex items-center gap-2 text-red-700 text-sm">
           <AlertCircle size={15} className="flex-shrink-0" />
@@ -195,6 +249,14 @@ export function QuickQuoteForm() {
       <Button type="submit" size="lg" disabled={loading} className="w-full font-bold">
         {loading ? 'Skickar...' : 'Få kostnadsfri offert'}
       </Button>
+
+      <p className="text-center text-xs text-gray-400 leading-relaxed">
+        Genom att skicka godkänner du att vi behandlar dina uppgifter enligt vår{' '}
+        <a href="/integritetspolicy" className="underline hover:text-brand-green">
+          integritetspolicy
+        </a>
+        .
+      </p>
 
       <div className="flex items-center justify-center gap-1 text-sm text-gray-500">
         <Phone size={14} />

@@ -1,4 +1,5 @@
 import { StarRating } from '@/components/ui/StarRating'
+import { Reveal, Stagger } from '@/components/premium/Scroll'
 
 // Update GOOGLE_REVIEWS_URL with your actual Google Business Profile link
 const GOOGLE_REVIEWS_URL = 'https://maps.app.goo.gl/eXFyo6Xd8bfKrPUZ8/reviews'
@@ -80,20 +81,20 @@ export function Testimonials() {
   return (
     <section className="py-10 sm:py-20 px-4 sm:px-6 lg:px-8 bg-white">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-10 sm:mb-16">
+        <Reveal className="text-center mb-10 sm:mb-16">
           <h2 className="text-2xl sm:text-4xl font-extrabold text-[#1A1A1A] mb-3 sm:mb-4 tracking-tight">
             Det säger våra kunder
           </h2>
           <p className="text-base sm:text-lg text-gray-700 max-w-2xl mx-auto">
             Vi är stolta över det förtroende våra kunder visar oss dag efter dag.
           </p>
-        </div>
+        </Reveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <Stagger itemClassName="h-full" className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {TESTIMONIALS.map((testimonial) => (
             <div
               key={testimonial.id}
-              className="bg-[#F5F5F5] rounded-2xl p-6 flex flex-col justify-between shadow-[0_4px_20px_rgba(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.07)] transition-all duration-300"
+              className="card-lift bg-[#F5F5F5] rounded-2xl p-6 flex flex-col justify-between shadow-[0_4px_20px_rgba(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.07)] transition-all duration-300 h-full"
             >
               <div className="mb-4">
                 <StarRating rating={testimonial.rating} />
@@ -112,7 +113,7 @@ export function Testimonials() {
               </div>
             </div>
           ))}
-        </div>
+        </Stagger>
 
         <div className="text-center mt-12 flex flex-col sm:flex-row items-center justify-center gap-4">
           <p className="text-gray-600 text-base">

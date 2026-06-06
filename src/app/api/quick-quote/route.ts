@@ -9,7 +9,20 @@ const quickQuoteSchema = z.object({
   postnummer: z.string().regex(/^\d{3}\s?\d{2}$/),
   fornamn: z.string().min(2),
   telefon: z.string().min(7).regex(/^[\d\s+\-()]+$/),
+  // Valfria fält
+  email: z.string().email().optional().or(z.literal('')),
+  meddelande: z.string().max(1000).optional(),
 })
+
+/** Escapa användardata innan den interpoleras in i mail-HTML (skydd mot injektion). */
+function escapeHtml(str: string): string {
+  return str
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;')
+}
 
 export async function POST(request: NextRequest) {
   try {
@@ -20,21 +33,29 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: 'Ogiltiga fältdata' }, { status: 400 })
     }
 
-    const { tjanst, postnummer, fornamn, telefon } = result.data
+    const { tjanst, postnummer, fornamn, telefon, email, meddelande } = result.data
 
     const html = [
       `<h2>Snabboffert från startsidan</h2>`,
-      `<p><strong>Tjänst:</strong> ${tjanst}</p>`,
-      `<p><strong>Postnummer:</strong> ${postnummer}</p>`,
-      `<p><strong>Namn:</strong> ${fornamn}</p>`,
-      `<p><strong>Telefon:</strong> ${telefon}</p>`,
-    ].join('\n')
+      `<p><strong>Tjänst:</strong> ${escapeHtml(tjanst)}</p>`,
+      `<p><strong>Postnummer:</strong> ${escapeHtml(postnummer)}</p>`,
+      `<p><strong>Namn:</strong> ${escapeHtml(fornamn)}</p>`,
+      `<p><strong>Telefon:</strong> ${escapeHtml(telefon)}</p>`,
+      email ? `<p><strong>E-post:</strong> ${escapeHtml(email)}</p>` : '',
+      meddelande?.trim()
+        ? `<p><strong>Meddelande:</strong><br/>${escapeHtml(meddelande).replace(/\n/g, '<br/>')}</p>`
+        : '',
+    ]
+      .filter(Boolean)
+      .join('\n')
 
     const recipient = process.env.RESEND_TO_OVERRIDE ?? 'info@karlacleaningcrew.se'
 
     const { error: sendError } = await resend.emails.send({
       from: process.env.RESEND_FROM ?? 'onboarding@resend.dev',
       to: recipient,
+      // Svara direkt till kunden om de angett e-post.
+      ...(email ? { replyTo: email } : {}),
       subject: `Snabboffert – ${tjanst} – ${fornamn}`,
       html,
     })

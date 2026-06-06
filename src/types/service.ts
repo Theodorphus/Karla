@@ -19,6 +19,8 @@ export interface ServiceData {
   rutEligible: boolean
   ecoFriendly: boolean
   imageSrc: string
+  /** object-position för hero-bilden, t.ex. 'center 35%'. Default 'center'. */
+  imageObjectPosition?: string
   keyPoints?: KeyPoint[]
   faq?: FAQ[]
 }

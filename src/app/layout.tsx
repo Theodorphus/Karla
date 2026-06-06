@@ -4,6 +4,8 @@ import './globals.css'
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
 import { StructuredData } from '@/components/seo/StructuredData'
+import { SmoothScroll } from '@/components/premium/SmoothScroll'
+import { ScrollProgress } from '@/components/premium/ScrollProgress'
 import { Analytics } from '@vercel/analytics/next'
 
 const inter = Inter({
@@ -125,8 +127,15 @@ export default function RootLayout({
     <html lang="sv" className={`${inter.variable} ${jakarta.variable} h-full antialiased`}>
       <head>
         <StructuredData />
+        {/* Fallback: visa allt scroll-reveal-innehåll direkt om JS saknas
+            (tillgänglighet + crawlers utan JS). */}
+        <noscript>
+          <style>{`[data-reveal]{opacity:1!important;transform:none!important;filter:none!important}.mask-reveal>span{transform:none!important}.mem-fade{opacity:1!important}`}</style>
+        </noscript>
       </head>
       <body className="min-h-full flex flex-col bg-white">
+        <SmoothScroll />
+        <ScrollProgress />
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />

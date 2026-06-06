@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { Button } from '@/components/ui/Button'
+import { Button, buttonClasses } from '@/components/ui/Button'
 
 interface CTASectionProps {
   title?: string
@@ -34,7 +34,7 @@ export function CTASection({
             </Link>
             <a
               href="tel:+46707402080"
-              className="inline-flex items-center justify-center font-semibold rounded-lg transition-all duration-200 whitespace-nowrap px-8 py-3 text-lg text-white border-2 border-white hover:bg-white hover:text-[#2E7D32] active:bg-white/90 min-w-48 shadow-md"
+              className={buttonClasses({ variant: 'outline-white', size: 'lg', className: 'min-w-48' })}
             >
               Ring oss direkt
             </a>
