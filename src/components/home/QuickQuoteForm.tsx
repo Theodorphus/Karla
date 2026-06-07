@@ -16,7 +16,7 @@ interface QuickFormState {
   fornamn: string
   telefon: string
   email: string
-  meddelande: string
+  beskrivning: string
 }
 
 const empty: QuickFormState = {
@@ -25,7 +25,7 @@ const empty: QuickFormState = {
   fornamn: '',
   telefon: '',
   email: '',
-  meddelande: '',
+  beskrivning: '',
 }
 
 export function QuickQuoteForm() {
@@ -223,15 +223,15 @@ export function QuickQuoteForm() {
         )}
       </div>
 
-      {/* Meddelande (valfritt) */}
+      {/* Beskrivning (valfritt) */}
       <div>
-        <label htmlFor="qq-meddelande" className="block text-sm font-semibold text-gray-700 mb-1">
-          Meddelande <span className="text-gray-400 font-normal">(valfritt)</span>
+        <label htmlFor="qq-beskrivning" className="block text-sm font-semibold text-gray-700 mb-1">
+          Beskrivning <span className="text-gray-400 font-normal">(valfritt)</span>
         </label>
         <textarea
-          id="qq-meddelande"
-          value={form.meddelande}
-          onChange={(e) => setForm((f) => ({ ...f, meddelande: e.target.value }))}
+          id="qq-beskrivning"
+          value={form.beskrivning}
+          onChange={(e) => setForm((f) => ({ ...f, beskrivning: e.target.value }))}
           className={`${inputCls} min-h-[80px] resize-y`}
           placeholder="Berätta gärna mer om dina önskemål …"
           rows={3}

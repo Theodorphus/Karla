@@ -7,13 +7,10 @@ import {
   type UseFormWatch,
   type UseFormSetValue,
   type FieldErrors,
-  type SubmitHandler,
 } from 'react-hook-form'
-import { zodResolver } from '@hookform/resolvers/zod'
 import { CheckCircle, AlertCircle, ChevronRight, ChevronLeft } from 'lucide-react'
 import { Button } from '@/components/ui/Button'
 import {
-  quoteSchema,
   type QuoteFormData,
   TJANSTER,
   FREKVENS_OPTIONS,
@@ -112,7 +109,25 @@ function Step1({ register, watch, setValue, errors }: Step1Props) {
             <button
               key={t.value}
               type="button"
-              onClick={() => setValue('tjanst', t.value, { shouldValidate: true })}
+              onClick={() => {
+                setValue('tjanst', t.value)
+                // Rensa fält och fel som inte gäller den valda tjänsten
+                if (t.value === 'fonsterputs') {
+                  setValue('kvm', undefined)
+                  setValue('frekvens', undefined)
+                  setValue('foretagsnamn', undefined)
+                } else if (t.value === 'hemstadning') {
+                  setValue('antalFonster', undefined)
+                  setValue('foretagsnamn', undefined)
+                } else if (['kontorsstadning', 'lokalvard'].includes(t.value)) {
+                  setValue('antalFonster', undefined)
+                  setValue('frekvens', undefined)
+                } else {
+                  setValue('antalFonster', undefined)
+                  setValue('frekvens', undefined)
+                  setValue('foretagsnamn', undefined)
+                }
+              }}
               className={`flex flex-col items-center gap-2 p-4 rounded-xl border-2 text-sm font-semibold transition-all cursor-pointer ${
                 tjanst === t.value
                   ? 'border-navy bg-navy text-white shadow-md'
@@ -410,14 +425,6 @@ function Step3({ register, errors }: Step3Props) {
   )
 }
 
-// ─── Step field keys for per-step trigger ─────────────────────────────────────
-
-const STEP_FIELDS: (keyof QuoteFormData)[][] = [
-  ['tjanst', 'kvm', 'antalFonster', 'frekvens', 'foretagsnamn'],
-  ['postnummer', 'ort', 'tid'],
-  ['fornamn', 'telefon', 'email', 'gdpr'],
-]
-
 // ─── Main component ───────────────────────────────────────────────────────────
 
 export function QuoteForm() {
@@ -426,23 +433,17 @@ export function QuoteForm() {
   const [success, setSuccess] = useState(false)
   const [submitError, setSubmitError] = useState('')
 
-  // zodResolver type is incompatible between @hookform/resolvers v5 and zod v4 — safe cast
   const {
     register,
-    handleSubmit,
     watch,
     setValue,
     getValues,
     setError,
     clearErrors,
-    trigger,
     formState: { errors },
     reset,
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  } = useForm<QuoteFormData>({ resolver: zodResolver(quoteSchema) as any, mode: 'onTouched' })
+  } = useForm<QuoteFormData>()
 
-  // Step 0 uses manual validation because superRefine doesn't fire
-  // reliably during field-level trigger() with zodResolver v5 + Zod v4.
   const validateStep0 = (): boolean => {
     clearErrors(['tjanst', 'kvm', 'antalFonster', 'frekvens', 'foretagsnamn'])
 
@@ -459,14 +460,14 @@ export function QuoteForm() {
       const isCommercial = tjanst === 'kontorsstadning' || tjanst === 'lokalvard'
 
       if (needsKvm) {
-        const kvm = getValues('kvm')
+        const kvm = Number(getValues('kvm'))
         if (!kvm || kvm < 10) {
           setError('kvm', { message: kvm ? 'Minst 10 kvm' : 'Ange storlek i kvm' })
           ok = false
         }
       }
       if (needsWindows) {
-        const antalFonster = getValues('antalFonster')
+        const antalFonster = Number(getValues('antalFonster'))
         if (!antalFonster || antalFonster < 1) {
           setError('antalFonster', { message: 'Ange antal fönster' })
           ok = false
@@ -491,24 +492,80 @@ export function QuoteForm() {
     return ok
   }
 
-  const goNext = async () => {
+  const validateStep1 = (): boolean => {
+    clearErrors(['postnummer', 'ort', 'tid'])
+    const postnummer = getValues('postnummer')
+    const ort = getValues('ort')
+    const tid = getValues('tid')
+    let ok = true
+    if (!postnummer?.match(/^\d{3}\s?\d{2}$/)) {
+      setError('postnummer', { message: 'Ange giltigt postnummer (t.ex. 417 51)' })
+      ok = false
+    }
+    if (!ort || ort.trim().length < 2) {
+      setError('ort', { message: 'Ange ort' })
+      ok = false
+    }
+    if (!tid) {
+      setError('tid', { message: 'Välj önskad tid' })
+      ok = false
+    }
+    return ok
+  }
+
+  const goNext = () => {
     if (step === 0) {
       if (validateStep0()) setStep(1)
       return
     }
-    const valid = await trigger(STEP_FIELDS[step])
-    if (valid) setStep((s) => s + 1)
+    if (step === 1) {
+      if (validateStep1()) setStep(2)
+      return
+    }
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const onSubmit: SubmitHandler<any> = async (data: QuoteFormData) => {
+  const validateStep2 = (): boolean => {
+    clearErrors(['fornamn', 'telefon', 'email', 'gdpr'])
+    const fornamn = getValues('fornamn')
+    const telefon = getValues('telefon')
+    const email = getValues('email')
+    const gdpr = getValues('gdpr')
+    let ok = true
+    if (!fornamn || fornamn.trim().length < 2) {
+      setError('fornamn', { message: 'Ange ditt förnamn' })
+      ok = false
+    }
+    if (!telefon || telefon.length < 7 || !/^[\d\s+\-()]+$/.test(telefon)) {
+      setError('telefon', { message: 'Ange ett giltigt telefonnummer' })
+      ok = false
+    }
+    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      setError('email', { message: 'Ange en giltig e-postadress' })
+      ok = false
+    }
+    if (!gdpr) {
+      setError('gdpr', { message: 'Du måste godkänna vår integritetspolicy' })
+      ok = false
+    }
+    return ok
+  }
+
+  const onSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    if (!validateStep2()) return
     setIsLoading(true)
     setSubmitError('')
     try {
+      const values = getValues()
+      const payload = {
+        ...values,
+        kvm: values.kvm ? Number(values.kvm) : undefined,
+        antalFonster: values.antalFonster ? Number(values.antalFonster) : undefined,
+      }
       const res = await fetch('/api/quote', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data),
+        body: JSON.stringify(payload),
       })
       if (!res.ok) throw new Error('Servern svarade med ett fel.')
       setSuccess(true)
@@ -543,7 +600,7 @@ export function QuoteForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} noValidate>
+    <form onSubmit={onSubmit} noValidate>
       <StepIndicator current={step} />
 
       <div className="min-h-[360px]">
