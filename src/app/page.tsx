@@ -24,8 +24,11 @@ export default function Home() {
       <Hero />
 
       {/* Quick Quote Section */}
-      <section className="bg-[#E8F5E9] py-16 sm:py-24 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <section className="relative overflow-hidden bg-[#E8F5E9] py-16 sm:py-24 px-4 sm:px-6 lg:px-8">
+        {/* Dekorativa ljuspunkter ger sektionen djup */}
+        <div aria-hidden className="absolute -top-24 -right-24 h-96 w-96 rounded-full bg-brand-green/10 blur-3xl pointer-events-none" />
+        <div aria-hidden className="absolute -bottom-32 -left-24 h-80 w-80 rounded-full bg-brand-green-light/20 blur-3xl pointer-events-none" />
+        <div className="relative max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left: copy */}
           <div className="text-gray-900">
             <p className="text-brand-green font-semibold tracking-widest text-sm uppercase mb-3">
@@ -54,7 +57,7 @@ export default function Home() {
           </div>
 
           {/* Right: form */}
-          <div className="bg-white rounded-2xl shadow-2xl p-6 sm:p-8">
+          <div className="bg-white rounded-3xl shadow-[0_28px_70px_-20px_rgba(27,94,32,0.3)] ring-1 ring-gray-100 p-6 sm:p-8">
             <QuickQuoteForm />
           </div>
         </div>

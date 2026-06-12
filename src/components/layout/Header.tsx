@@ -21,10 +21,10 @@ export function Header() {
 
   return (
     <header
-      className={`sticky top-0 z-50 transition-all duration-200 ${
+      className={`sticky top-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'bg-white/95 backdrop-blur-md shadow-lg'
-          : 'bg-white/50 backdrop-blur-sm shadow-none'
+          ? 'bg-white/90 backdrop-blur-xl shadow-[0_8px_30px_-12px_rgba(27,94,32,0.18)] border-b border-gray-100'
+          : 'bg-white/50 backdrop-blur-sm shadow-none border-b border-transparent'
       }`}
     >
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-18">
@@ -53,14 +53,14 @@ export function Header() {
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-8">
           {MAIN_NAV.map((item) => (
-            <Link key={item.href} href={item.href} className="text-gray-700 hover:text-brand-green hover:bg-gray-100 px-3 py-1.5 rounded-md transition-colors">
+            <Link key={item.href} href={item.href} className="nav-link text-[15px] font-medium">
               {item.label}
             </Link>
           ))}
 
           {/* Services Dropdown */}
           <div className="relative group">
-            <button className="text-gray-700 hover:text-brand-green hover:bg-gray-100 px-3 py-1.5 rounded-md transition-colors flex items-center gap-1">
+            <button className="nav-link text-[15px] font-medium flex items-center gap-1">
               Tjänster
               <svg
                 className="w-4 h-4 transition-transform group-hover:rotate-180"
@@ -73,14 +73,15 @@ export function Header() {
             </button>
 
             {/* Dropdown Menu */}
-            <div className="absolute left-0 mt-0 w-56 bg-white rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-              <div className="py-2">
+            <div className="absolute left-1/2 -translate-x-1/2 pt-3 w-60 opacity-0 invisible translate-y-1 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-300 ease-out">
+              <div className="bg-white/95 backdrop-blur-xl rounded-2xl shadow-[0_24px_50px_-12px_rgba(27,94,32,0.25)] border border-gray-100 overflow-hidden py-2">
                 {SERVICES_NAV.map((item) => (
                   <Link
                     key={item.href}
                     href={item.href}
-                    className="block px-4 py-2 text-gray-700 hover:text-brand-green hover:bg-green-50 transition-colors"
+                    className="group/item relative block px-5 py-2.5 text-[15px] text-gray-700 hover:text-brand-green hover:bg-brand-green-lighter/60 transition-colors"
                   >
+                    <span className="absolute left-0 top-1/2 -translate-y-1/2 h-0 w-[3px] rounded-r bg-brand-green transition-all duration-200 group-hover/item:h-5" />
                     {item.label}
                   </Link>
                 ))}

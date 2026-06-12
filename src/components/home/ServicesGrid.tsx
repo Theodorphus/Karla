@@ -20,7 +20,10 @@ export function ServicesGrid() {
     <section className="py-12 sm:py-24 px-4 sm:px-6 lg:px-8 bg-white">
       <div className="max-w-7xl mx-auto">
         <Reveal className="text-center mb-10 sm:mb-20">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 tracking-tight">
+          <p className="text-brand-green font-semibold tracking-widest text-sm uppercase mb-3">
+            Våra tjänster
+          </p>
+          <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 tracking-tight">
             6 specialiserade tjänster
           </h2>
           <p className="text-base sm:text-xl text-gray-600 max-w-2xl mx-auto">
@@ -51,11 +54,13 @@ export function ServicesGrid() {
                         <span className="text-6xl">🧹</span>
                       </div>
                     )}
+                    {/* Mjuk gradient nedtill ger bilden djup och fäste */}
+                    <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-black/25 to-transparent" />
                     {/* Overlay on hover */}
                     <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-300"></div>
 
                     {/* Service Icon - Upper Left */}
-                    <div className="absolute top-4 left-4 w-12 h-12 bg-white/95 rounded-lg flex items-center justify-center shadow-md text-brand-green">
+                    <div className="absolute top-4 left-4 w-12 h-12 bg-white/90 backdrop-blur-md rounded-xl flex items-center justify-center shadow-lg shadow-black/10 ring-1 ring-white/60 text-brand-green">
                       <div className="w-6 h-6">
                         {serviceIcons[service.slug] || <span className="text-2xl">🧹</span>}
                       </div>
@@ -64,7 +69,7 @@ export function ServicesGrid() {
 
                   {/* Content */}
                   <div className="flex flex-col flex-grow p-5 sm:p-8">
-                    <h3 className="text-2xl sm:text-2xl font-bold text-gray-900 mb-4 group-hover:text-brand-green transition-colors duration-200">
+                    <h3 className="font-display text-2xl sm:text-2xl font-bold text-gray-900 mb-4 group-hover:text-brand-green transition-colors duration-200">
                       {service.title}
                     </h3>
 

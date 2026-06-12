@@ -82,7 +82,10 @@ export function Testimonials() {
     <section className="py-10 sm:py-20 px-4 sm:px-6 lg:px-8 bg-white">
       <div className="max-w-7xl mx-auto">
         <Reveal className="text-center mb-10 sm:mb-16">
-          <h2 className="text-2xl sm:text-4xl font-extrabold text-[#1A1A1A] mb-3 sm:mb-4 tracking-tight">
+          <p className="text-brand-green font-semibold tracking-widest text-sm uppercase mb-3">
+            Omdömen
+          </p>
+          <h2 className="font-display text-2xl sm:text-4xl font-extrabold text-[#1A1A1A] mb-3 sm:mb-4 tracking-tight">
             Det säger våra kunder
           </h2>
           <p className="text-base sm:text-lg text-gray-700 max-w-2xl mx-auto">
@@ -94,8 +97,15 @@ export function Testimonials() {
           {TESTIMONIALS.map((testimonial) => (
             <div
               key={testimonial.id}
-              className="card-lift bg-[#F5F5F5] rounded-2xl p-6 flex flex-col justify-between shadow-[0_4px_20px_rgba(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.07)] transition-all duration-300 h-full"
+              className="card-lift relative overflow-hidden bg-white border border-gray-100 rounded-2xl p-6 flex flex-col justify-between shadow-[0_4px_24px_rgba(0,0,0,0.05)] hover:shadow-[0_12px_36px_rgba(27,94,32,0.1)] hover:border-brand-green/20 transition-all duration-300 h-full"
             >
+              {/* Dekorativt citattecken */}
+              <span
+                aria-hidden
+                className="absolute -top-3 right-4 font-display text-[88px] leading-none text-brand-green/10 select-none pointer-events-none"
+              >
+                &rdquo;
+              </span>
               <div className="mb-4">
                 <StarRating rating={testimonial.rating} />
               </div>

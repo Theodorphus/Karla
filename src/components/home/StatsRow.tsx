@@ -42,7 +42,10 @@ export function StatsRow() {
       <div className="max-w-7xl mx-auto">
         {/* Heading */}
         <Reveal className="text-center mb-20">
-          <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4 tracking-tight">
+          <p className="text-brand-green font-semibold tracking-widest text-sm uppercase mb-3">
+            Förtroende
+          </p>
+          <h2 className="font-display text-4xl sm:text-5xl font-bold text-gray-900 mb-4 tracking-tight">
             Karla i siffror
           </h2>
           <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto">

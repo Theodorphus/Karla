@@ -375,6 +375,61 @@ html.lenis body {
   }
 }
 
+/* ── Ken Burns: långsam zoom på hero-bilden. Ger video-känsla utan video.
+   Läggs på <Image>-elementet; parallax-transformen ligger på föräldern
+   (.parallax-layer) så de krockar inte. */
+@keyframes kenBurns {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.09);
+  }
+}
+.hero-kenburns {
+  animation: kenBurns 26s ease-out both;
+  transform-origin: center 40%;
+  will-change: transform;
+}
+
+/* ── Nav-länkar: animerad understrykning istället för pill-hover ──── */
+.nav-link {
+  position: relative;
+  padding: 6px 2px;
+  color: #374151;
+  transition: color 0.25s ease;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--color-brand-green), var(--color-brand-green-light));
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.nav-link:hover {
+  color: var(--color-brand-green);
+}
+.nav-link:hover::after,
+.nav-link[aria-expanded='true']::after {
+  transform: scaleX(1);
+}
+
+/* ── Subtil kornighet (textur) för mörka premium-sektioner ─────────── */
+.bg-noise::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.05;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
 /* Hero-entré: mjuk fade-up vid sidladdning (ingen observer – syns direkt).
    Stagger via inline --hero-delay. LCP-rubriken hålls kort/snabb. */
 .hero-rise {
@@ -429,5 +484,12 @@ html.lenis body {
     animation: none;
     transform: none;
     opacity: 1;
+  }
+  .hero-kenburns {
+    animation: none;
+    transform: none;
+  }
+  .nav-link::after {
+    transition: none;
   }
 }

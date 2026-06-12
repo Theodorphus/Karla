@@ -25,7 +25,7 @@ const baseStyles =
 
 const variantStyles: Record<ButtonVariant, string> = {
   primary:
-    'bg-navy text-white hover:bg-petrol active:bg-petrol/90 focus-visible:ring-navy shadow-md hover:shadow-lg hover:translate-y-[-1px] tracking-wide',
+    'bg-gradient-to-b from-[#359A3B] to-[#2E7D32] text-white hover:from-[#2E7D32] hover:to-[#1B5E20] active:to-petrol focus-visible:ring-navy shadow-[0_8px_22px_-8px_rgba(46,125,50,0.55)] hover:shadow-[0_14px_30px_-8px_rgba(46,125,50,0.6)] hover:translate-y-[-1px] tracking-wide ring-1 ring-inset ring-white/25',
 
   secondary:
     'bg-white text-navy hover:bg-gray-50 active:bg-gray-100 focus-visible:ring-navy shadow-lg hover:shadow-xl hover:translate-y-[-1px] border border-white/20',

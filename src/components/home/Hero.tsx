@@ -11,18 +11,25 @@ export function Hero() {
       {/* Background Image with subtle scroll-parallax */}
       <ParallaxFrame speed={70} className="absolute inset-0">
         <Image
-          src="/images/home/hero_home2.png"
+          src="/images/home/hero_home4.png"
           alt="Ljust, nystädat vardagsrum – professionell städning i Göteborg av Karla Cleaning Crew"
           fill
-          className="object-cover"
+          className="object-cover hero-kenburns"
           priority
           fetchPriority="high"
           quality={85}
           sizes="100vw"
         />
-        {/* Dark overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/40 to-black/55" />
+        {/* Overlay: djupgrön ton + vinjett för läsbarhet med premium-känsla */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0c1f0e]/55 via-[#10240f]/40 to-[#0c1f0e]/60" />
+        <div
+          className="absolute inset-0"
+          style={{ background: 'radial-gradient(ellipse 120% 90% at 50% 42%, transparent 45%, rgba(5, 16, 7, 0.4) 100%)' }}
+        />
       </ParallaxFrame>
+
+      {/* Mjuk ton-i-ton-övergång ner mot offert-sektionen */}
+      <div className="absolute inset-x-0 bottom-0 z-[5] h-20 bg-gradient-to-t from-[#E8F5E9]/35 to-transparent pointer-events-none" />
 
       {/* Content */}
       <div className="relative z-10 max-w-3xl mx-auto px-4 sm:px-6 text-center text-white">

@@ -37,7 +37,10 @@ export function USPRow({
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <Reveal className="text-center mb-10 sm:mb-16">
-          <h2 className="text-2xl sm:text-4xl font-extrabold text-[#1A1A1A] mb-3 sm:mb-4 tracking-tight leading-tight">
+          <p className="text-brand-green font-semibold tracking-widest text-sm uppercase mb-3">
+            Därför Karla
+          </p>
+          <h2 className="font-display text-2xl sm:text-4xl font-extrabold text-[#1A1A1A] mb-3 sm:mb-4 tracking-tight leading-tight">
             {title}
           </h2>
           <p className="text-base sm:text-lg text-gray-700 max-w-2xl mx-auto leading-relaxed">
@@ -53,7 +56,7 @@ export function USPRow({
               className="card-lift bg-white rounded-2xl p-6 shadow-[0_4px_20px_rgba(0,0,0,0.05)] border border-transparent hover:border-[#A5D6A7] hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)] transition-all duration-300 flex gap-4 h-full"
             >
               {/* Checkmark circle */}
-              <div className="flex-shrink-0 mt-0.5 h-9 w-9 rounded-full bg-[#E8F5E9] flex items-center justify-center">
+              <div className="card-icon flex-shrink-0 mt-0.5 h-10 w-10 rounded-xl bg-gradient-to-br from-[#E8F5E9] to-[#C8E6C9] ring-1 ring-brand-green/15 flex items-center justify-center">
                 <Icon icon={item.icon} size={18} color="brand" />
               </div>
 
