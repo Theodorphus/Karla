@@ -24,7 +24,7 @@ export default function Home() {
       <Hero />
 
       {/* Quick Quote Section */}
-      <section className="relative overflow-hidden bg-[#E8F5E9] py-16 sm:py-24 px-4 sm:px-6 lg:px-8">
+      <section id="offert" className="relative overflow-hidden bg-[#E8F5E9] py-16 sm:py-24 px-4 sm:px-6 lg:px-8 scroll-mt-24">
         {/* Dekorativa ljuspunkter ger sektionen djup */}
         <div aria-hidden className="absolute -top-24 -right-24 h-96 w-96 rounded-full bg-brand-green/10 blur-3xl pointer-events-none" />
         <div aria-hidden className="absolute -bottom-32 -left-24 h-80 w-80 rounded-full bg-brand-green-light/20 blur-3xl pointer-events-none" />

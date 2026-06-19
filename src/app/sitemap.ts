@@ -1,8 +1,16 @@
 import { MetadataRoute } from 'next'
+import { getAllCitySlugs } from '@/lib/data/cities'
 
 const BASE_URL = 'https://karlacleaningcrew.se'
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  const cityRoutes: MetadataRoute.Sitemap = getAllCitySlugs().map((slug) => ({
+    url: `${BASE_URL}/stad/${slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly',
+    priority: 0.85,
+  }))
+
   return [
     {
       url: BASE_URL,
@@ -70,5 +78,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'yearly',
       priority: 0.3,
     },
+    ...cityRoutes,
   ]
 }

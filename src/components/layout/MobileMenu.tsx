@@ -1,9 +1,14 @@
 'use client'
 
 import Link from 'next/link'
+import { Phone } from 'lucide-react'
 import { Button } from '@/components/ui/Button'
+import { GoogleRating } from '@/components/ui/GoogleRating'
 import { MAIN_NAV, SERVICES_NAV } from '@/lib/data/navigation'
 import { useState } from 'react'
+
+const PHONE = '+46707402080'
+const PHONE_DISPLAY = '070 740 20 80'
 
 interface MobileMenuProps {
   isOpen: boolean
@@ -67,12 +72,23 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
           )}
         </div>
 
-        <div className="pt-4">
-          <Link href="/kontakt" className="w-full" onClick={onClose}>
+        <div className="pt-4 space-y-3">
+          <Link href="/kontakt#offert" className="w-full" onClick={onClose}>
             <Button className="w-full">
               Få offert här
             </Button>
           </Link>
+          <a
+            href={`tel:${PHONE}`}
+            className="w-full flex items-center justify-center gap-2 rounded-lg border-2 border-navy text-navy font-semibold py-2.5"
+            onClick={onClose}
+          >
+            <Phone size={17} />
+            {PHONE_DISPLAY}
+          </a>
+          <div className="flex justify-center pt-1">
+            <GoogleRating tone="dark" size="sm" />
+          </div>
         </div>
       </div>
     </div>
