@@ -42,7 +42,7 @@ export function StructuredData() {
     aggregateRating: {
       '@type': 'AggregateRating',
       ratingValue: '5.0',
-      reviewCount: '15',
+      reviewCount: '16',
       bestRating: '5',
       worstRating: '1',
     },
@@ -81,6 +81,7 @@ export function StructuredData() {
     sameAs: [
       'https://www.facebook.com/profile.php?id=61555285093932',
       'https://www.instagram.com/karlacleaningcrew',
+      'https://maps.app.goo.gl/EvsvheTn6KSXxLQv8',
     ],
   }
 

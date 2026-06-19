@@ -3,9 +3,13 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
+import { Phone } from 'lucide-react'
 import { Button } from '@/components/ui/Button'
 import { MAIN_NAV, SERVICES_NAV } from '@/lib/data/navigation'
 import { MobileMenu } from './MobileMenu'
+
+const PHONE = '+46707402080'
+const PHONE_DISPLAY = '070 740 20 80'
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false)
@@ -90,9 +94,16 @@ export function Header() {
           </div>
         </div>
 
-        {/* CTA Button - Desktop */}
-        <div className="hidden md:block">
-          <Link href="/kontakt">
+        {/* Phone + CTA Button - Desktop */}
+        <div className="hidden md:flex items-center gap-4">
+          <a
+            href={`tel:${PHONE}`}
+            className="flex items-center gap-2 text-navy font-semibold text-[15px] hover:text-brand-green transition-colors"
+          >
+            <Phone size={17} className="text-brand-green" />
+            {PHONE_DISPLAY}
+          </a>
+          <Link href="/kontakt#offert">
             <Button>Få offert här</Button>
           </Link>
         </div>

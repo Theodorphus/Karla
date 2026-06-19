@@ -3,6 +3,7 @@ import Image from 'next/image'
 import { CheckCircle } from 'lucide-react'
 import { Button } from '@/components/ui/Button'
 import { Icon } from '@/components/ui/Icon'
+import { GoogleRating } from '@/components/ui/GoogleRating'
 import { ParallaxFrame } from '@/components/premium/Effects'
 
 export function Hero() {
@@ -81,7 +82,7 @@ export function Hero() {
           className="hero-rise flex flex-col sm:flex-row gap-3 justify-center"
           style={{ ['--hero-delay' as string]: '420ms' }}
         >
-          <Link href="/kontakt#offert" className="w-full sm:w-auto">
+          <Link href="#offert" className="w-full sm:w-auto">
             <Button size="lg" className="shadow-xl w-full sm:w-auto">
               Få kostnadsfri offert
             </Button>
@@ -91,6 +92,14 @@ export function Hero() {
               Se alla tjänster
             </Button>
           </Link>
+        </div>
+
+        {/* Google-betyg — social proof direkt i hero */}
+        <div
+          className="hero-rise mt-6 flex justify-center"
+          style={{ ['--hero-delay' as string]: '520ms' }}
+        >
+          <GoogleRating tone="light" size="sm" />
         </div>
       </div>
     </section>
