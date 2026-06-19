@@ -1,8 +1,6 @@
 import { StarRating } from '@/components/ui/StarRating'
 import { Reveal, Stagger } from '@/components/premium/Scroll'
-
-// Update GOOGLE_REVIEWS_URL with your actual Google Business Profile link
-const GOOGLE_REVIEWS_URL = 'https://maps.app.goo.gl/eXFyo6Xd8bfKrPUZ8/reviews'
+import { GOOGLE_REVIEWS_URL, REVIEW_COUNT, RATING_VALUE } from '@/components/ui/GoogleRating'
 
 const TESTIMONIALS = [
   {
@@ -127,8 +125,8 @@ export function Testimonials() {
 
         <div className="text-center mt-12 flex flex-col sm:flex-row items-center justify-center gap-4">
           <p className="text-gray-600 text-base">
-            <span className="font-bold text-[#2E7D32] text-lg">15</span> recensioner &middot; snitt{' '}
-            <span className="font-bold text-[#2E7D32] text-lg">5.0 / 5</span> på Google
+            <span className="font-bold text-[#2E7D32] text-lg">{REVIEW_COUNT}</span> recensioner &middot; snitt{' '}
+            <span className="font-bold text-[#2E7D32] text-lg">{RATING_VALUE} / 5</span> på Google
           </p>
           <a
             href={GOOGLE_REVIEWS_URL}

@@ -1,5 +1,6 @@
 import { MetadataRoute } from 'next'
 import { getAllCitySlugs } from '@/lib/data/cities'
+import { getAllGuideSlugs } from '@/lib/data/guides'
 
 const BASE_URL = 'https://karlacleaningcrew.se'
 
@@ -9,6 +10,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified: new Date(),
     changeFrequency: 'monthly',
     priority: 0.85,
+  }))
+
+  const guideRoutes: MetadataRoute.Sitemap = getAllGuideSlugs().map((slug) => ({
+    url: `${BASE_URL}/guider/${slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly',
+    priority: 0.6,
   }))
 
   return [
@@ -78,6 +86,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'yearly',
       priority: 0.3,
     },
+    {
+      url: `${BASE_URL}/guider`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.7,
+    },
     ...cityRoutes,
+    ...guideRoutes,
   ]
 }

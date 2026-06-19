@@ -43,7 +43,7 @@ export function CTABanner() {
             href="tel:+46707402080"
             className={buttonClasses({ variant: 'outline-white', size: 'lg' })}
           >
-            Ring oss: 070-740 20 80
+            Ring oss: 070 740 20 80
           </a>
         </div>
 

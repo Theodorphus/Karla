@@ -232,6 +232,206 @@ export const CITIES: CityData[] = [
       },
     ],
   },
+  {
+    slug: 'askim',
+    name: 'Askim',
+    h1: 'Städning i Askim',
+    seoTitle: 'Städning Askim | Hemstäd & Fönsterputs med RUT – Karla Cleaning Crew',
+    seoDescription:
+      'Hemstädning, fönsterputs och flyttstäd i Askim med RUT-avdrag och städgaranti. ⭐ 5,0 på Google. Kostnadsfri offert inom 24h.',
+    intro:
+      'Karla Cleaning Crew erbjuder professionell städning i Askim – villaområden, radhus och lägenheter med samma noggrannhet och miljövänliga produkter. Mer fritid åt dig, ett alltid rent hem.',
+    body: [
+      'Askim är ett populärt villaområde i södra Göteborg, och vi har lång erfarenhet av att städa både större hus och bostadsrätter här. Vi anpassar alltid arbetet efter din bostad och dina önskemål – ingen mall.',
+      'Du får RUT-avdrag på återkommande hemstädning och fönsterputs, vilket halverar arbetskostnaden. Inför flytt gör vi flyttstäd enligt Mäklarsamfundets riktlinjer med städgaranti. Vill du ha samma städare varje gång? Det ordnar vi.',
+      'Hör av dig för en kostnadsfri offert på städning i Askim inom 24 timmar – utan bindningstid och utan dolda avgifter.',
+    ],
+    areas: ['Askim', 'Hovås', 'Billdal', 'Sisjön', 'Lilleby'],
+    proximity:
+      'Askim ligger i södra Göteborg, granne med vår bas – det betyder snabb service och korta restider för dig.',
+    faq: [
+      {
+        question: 'Städar ni villor och radhus i Askim?',
+        answer:
+          'Ja, det är en av våra vanligaste uppdragstyper i Askim, Hovås och Billdal. Vi anpassar städningen efter husets storlek och dina behov.',
+      },
+      {
+        question: 'Får jag RUT-avdrag i Askim?',
+        answer:
+          'Ja, vi drar av RUT direkt på fakturan för hemstädning och fönsterputs. Du betalar bara halva arbetskostnaden.',
+      },
+      {
+        question: 'Kan jag få samma städare varje gång?',
+        answer:
+          'Ja, det erbjuder vi gärna. Många kunder i Askim uppskattar tryggheten i att känna igen sin städare.',
+      },
+      {
+        question: 'Hur snabbt kan ni komma?',
+        answer:
+          'Ofta inom en vecka för återkommande hemstädning. Flyttstäd kan vi i många fall lösa med kortare varsel.',
+      },
+    ],
+  },
+  {
+    slug: 'frolunda',
+    name: 'Frölunda',
+    h1: 'Städning i Västra Frölunda',
+    seoTitle: 'Städning Västra Frölunda | Hemstäd & Flyttstäd – Karla Cleaning Crew',
+    seoDescription:
+      'Hemstädning, flyttstäd och fönsterputs i Västra Frölunda med RUT-avdrag och städgaranti. ⭐ 5,0 på Google. Gratis offert inom 24h.',
+    intro:
+      'Karla Cleaning Crew städar i Västra Frölunda – lägenheter, radhus och villor. Återkommande hemstädning, flyttstäd och fönsterputs med miljövänliga produkter och full försäkring.',
+    body: [
+      'Frölunda är ett av södra Göteborgs största bostadsområden, med allt från lägenheter kring Frölunda Torg till villor i Kannebäck och Tofta. Vi har erfarenhet av alla typer och anpassar städningen efter just din bostad.',
+      'Du får RUT-avdrag på hemstädning och fönsterputs, och flyttstäd görs enligt Mäklarsamfundets riktlinjer med städgaranti. Behöver vi komma tillbaka och justera något efter flyttstäden gör vi det utan extra kostnad.',
+      'Kontakta oss för en kostnadsfri offert på städning i Västra Frölunda inom 24 timmar – ingen bindningstid.',
+    ],
+    areas: ['Västra Frölunda', 'Frölunda Torg', 'Kannebäck', 'Tofta', 'Ruddalen', 'Önnered'],
+    proximity:
+      'Frölunda ligger i södra Göteborg nära vårt arbetsområde – du får snabb och flexibel service utan långa restider.',
+    faq: [
+      {
+        question: 'Vilka delar av Frölunda städar ni i?',
+        answer:
+          'Vi städar i hela Västra Frölunda, bland annat kring Frölunda Torg, Kannebäck, Tofta och Önnered.',
+      },
+      {
+        question: 'Städar ni lägenheter inför försäljning?',
+        answer:
+          'Ja, flyttstäd inför bostadsrättsförsäljning är ett av våra vanligaste uppdrag i Frölunda. Vi följer Mäklarsamfundets riktlinjer och lämnar städgaranti.',
+      },
+      {
+        question: 'Ingår RUT-avdrag?',
+        answer:
+          'Ja, för hemstädning och fönsterputs drar vi av RUT direkt på fakturan – du betalar bara halva arbetskostnaden.',
+      },
+      {
+        question: 'Kan ni städa varannan vecka?',
+        answer:
+          'Ja, vi erbjuder återkommande hemstädning varje vecka, varannan vecka eller månadsvis – helt efter ditt behov.',
+      },
+    ],
+  },
+  {
+    slug: 'lerum',
+    name: 'Lerum',
+    h1: 'Städfirma i Lerum',
+    seoTitle: 'Städfirma Lerum | Hemstädning, Flyttstäd & Kontor – Karla Cleaning Crew',
+    seoDescription:
+      'Pålitlig städfirma i Lerum. Hemstädning med RUT, flyttstäd med garanti, fönsterputs & kontorsstädning. ⭐ 5,0 på Google. Kostnadsfri offert inom 24h.',
+    intro:
+      'Karla Cleaning Crew är städfirman som hjälper privatpersoner och företag i Lerum med allt från återkommande hemstädning till flyttstäd och kontorsstädning. Pålitlig service med tio års erfarenhet.',
+    body: [
+      'Lerum med Gråbo, Floda och Stenkullen är ett område med många villor och barnfamiljer som vill ha mer tid över. Vi tar hand om städningen så att du slipper – med miljövänliga produkter som är säkra för barn och husdjur.',
+      'Privatpersoner får RUT-avdrag på hemstädning och fönsterputs, och flyttstäd görs enligt Mäklarsamfundets riktlinjer med städgaranti. Företag i Lerum kan boka kontorsstädning och lokalvård med fast kontaktperson och flexibla tider.',
+      'Hör av dig så får du en kostnadsfri offert för städning i Lerum inom 24 timmar. Inga dolda avgifter, ingen bindningstid.',
+    ],
+    areas: ['Lerum centrum', 'Gråbo', 'Floda', 'Stenkullen', 'Sjövik', 'Tollered'],
+    proximity:
+      'Lerum ligger nordost om Göteborg längs E20 – lätt för oss att nå, så du får service utan onödiga restidskostnader.',
+    faq: [
+      {
+        question: 'Städar ni i hela Lerums kommun?',
+        answer:
+          'Ja, vi täcker Lerum med Gråbo, Floda, Stenkullen och Sjövik. Vi planerar rutterna effektivt för att hålla restiden nere.',
+      },
+      {
+        question: 'Erbjuder ni hemstädning med RUT i Lerum?',
+        answer:
+          'Ja. Vi drar av RUT direkt på fakturan för hemstädning och fönsterputs, så du betalar bara halva arbetskostnaden.',
+      },
+      {
+        question: 'Kan ni sköta kontorsstädning för företag i Lerum?',
+        answer:
+          'Absolut. Vi erbjuder kontorsstädning och lokalvård med fast kontaktperson, tydliga priser och städning på de tider som passar er verksamhet.',
+      },
+      {
+        question: 'Hur snabbt kan ni starta?',
+        answer:
+          'Ofta inom en vecka för återkommande hemstädning. Flyttstäd kan vi i många fall lösa med kortare varsel – hör av dig så hittar vi en tid.',
+      },
+    ],
+  },
+  {
+    slug: 'harryda',
+    name: 'Härryda',
+    h1: 'Städning i Härryda',
+    seoTitle: 'Städning Härryda & Mölnlycke | Hemstäd & Flyttstäd – Karla Cleaning Crew',
+    seoDescription:
+      'Städfirma i Härryda och Mölnlycke. Hemstädning med RUT, flyttstäd med garanti & fönsterputs. ⭐ 5,0 på Google. Kostnadsfri offert inom 24h.',
+    intro:
+      'Karla Cleaning Crew erbjuder professionell städning i Härryda kommun – Mölnlycke, Landvetter och Råda. Hemstädning, flyttstäd och fönsterputs med miljövänliga produkter och full försäkring.',
+    body: [
+      'Härryda kommun – med Mölnlycke, Landvetter och Råda – är ett växande villaområde sydost om Göteborg. Vi städar både moderna hus och äldre bostäder här, och anpassar alltid arbetet efter just din bostad.',
+      'Du får RUT-avdrag på återkommande hemstädning och fönsterputs, vilket halverar arbetskostnaden. Inför flytt gör vi flyttstäd enligt Mäklarsamfundets riktlinjer med städgaranti, och vi erbjuder gärna samma städare varje gång.',
+      'Kontakta oss för en kostnadsfri offert på städning i Härryda inom 24 timmar – utan bindningstid.',
+    ],
+    areas: ['Mölnlycke', 'Landvetter', 'Råda', 'Hindås', 'Rävlanda', 'Hällingsjö'],
+    proximity:
+      'Härryda med Mölnlycke och Landvetter ligger sydost om Göteborg, nära vårt arbetsområde – vi är snabbt på plats hos dig.',
+    faq: [
+      {
+        question: 'Städar ni i Mölnlycke och Landvetter?',
+        answer:
+          'Ja, vi städar i hela Härryda kommun inklusive Mölnlycke, Landvetter, Råda och Hindås.',
+      },
+      {
+        question: 'Får jag RUT-avdrag i Härryda?',
+        answer:
+          'Ja, vi drar av RUT direkt på fakturan för hemstädning och fönsterputs. Du betalar bara halva arbetskostnaden.',
+      },
+      {
+        question: 'Gör ni flyttstäd med kort varsel?',
+        answer:
+          'Ofta ja. Behöver du flyttstäd snabbt inför nyckelöverlämning i Härryda-området – ring oss så löser vi det.',
+      },
+      {
+        question: 'Kan jag få återkommande hemstädning?',
+        answer:
+          'Ja, vi erbjuder hemstädning varje vecka, varannan vecka eller månadsvis, gärna med samma städare varje gång.',
+      },
+    ],
+  },
+  {
+    slug: 'kungalv',
+    name: 'Kungälv',
+    h1: 'Städfirma i Kungälv',
+    seoTitle: 'Städfirma Kungälv | Hemstädning, Flyttstäd & Fönsterputs – Karla Cleaning Crew',
+    seoDescription:
+      'Städfirma i Kungälv. Hemstädning med RUT-avdrag, flyttstäd med garanti & fönsterputs. ⭐ 5,0 på Google. Kostnadsfri offert inom 24h.',
+    intro:
+      'Karla Cleaning Crew erbjuder professionell städning i Kungälv – inklusive Ytterby, Kareby och Kode. Hemstädning, flyttstäd och fönsterputs med miljövänliga produkter och städgaranti.',
+    body: [
+      'Kungälv med Ytterby och Kareby är ett område med blandad bebyggelse – från villor och radhus till lägenheter i centrum. Vi anpassar alltid städningen efter din bostad och dina önskemål.',
+      'Återkommande hemstädning och fönsterputs ger RUT-avdrag, vilket halverar arbetskostnaden. Inför flytt gör vi flyttstäd enligt Mäklarsamfundets riktlinjer med städgaranti – blir något inte bra kommer vi tillbaka utan extra kostnad.',
+      'Hör av dig för en kostnadsfri offert på städning i Kungälv inom 24 timmar. Inga dolda avgifter, ingen bindningstid.',
+    ],
+    areas: ['Kungälv centrum', 'Ytterby', 'Kareby', 'Kode', 'Kärna', 'Marstrand'],
+    proximity:
+      'Kungälv ligger norr om Göteborg. Vi planerar rutterna dit effektivt så att du får pålitlig service till ett rimligt pris.',
+    faq: [
+      {
+        question: 'Städar ni i hela Kungälv kommun?',
+        answer:
+          'Ja, vi täcker Kungälv med Ytterby, Kareby, Kode och Kärna. Kontakta oss så bekräftar vi tider för just din adress.',
+      },
+      {
+        question: 'Erbjuder ni RUT-avdrag i Kungälv?',
+        answer:
+          'Ja. RUT gäller oavsett var du bor. För hemstädning och fönsterputs drar vi av det direkt på fakturan.',
+      },
+      {
+        question: 'Ingår städgaranti vid flyttstäd?',
+        answer:
+          'Ja, vi lämnar städgaranti på flyttstäd. Om något inte blivit nöjaktigt kommer vi tillbaka och åtgärdar det utan extra kostnad.',
+      },
+      {
+        question: 'Hur får jag en offert?',
+        answer:
+          'Fyll i formuläret eller ring oss, så återkommer vi med ett personligt pris inom 24 timmar – helt kostnadsfritt.',
+      },
+    ],
+  },
 ]
 
 export function getCityBySlug(slug: string): CityData | undefined {
