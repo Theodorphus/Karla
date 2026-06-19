@@ -6,7 +6,7 @@ import { QuoteForm } from '@/components/quote/QuoteForm'
 export const metadata: Metadata = {
   title: 'Kontakt | Karla Cleaning Crew | Göteborg',
   description:
-    'Kontakta Karla Cleaning Crew i Göteborg för en gratis offert. Vi svarar inom 24 timmar. Ring 0707–40 20 80.',
+    'Kontakta Karla Cleaning Crew i Göteborg för en gratis offert. Vi svarar inom 24 timmar. Ring 070 740 20 80.',
   openGraph: {
     title: 'Kontakt | Karla Cleaning Crew',
     description: 'Kontakta oss för en gratis offert på städning. Snabb respons garanterad.',
@@ -82,7 +82,7 @@ export default function KontaktPage() {
                 href="tel:+46707402080"
                 className="text-navy hover:text-petrol text-lg font-semibold break-all ml-8"
               >
-                +46 707 40 20 80
+                070 740 20 80
               </a>
             </div>
 

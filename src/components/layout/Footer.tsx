@@ -21,7 +21,7 @@ export function Footer() {
             <div className="space-y-3">
               <a href="tel:+46707402080" className="flex items-center gap-3 text-sm text-gray-700 hover:text-[#2E7D32] transition-colors">
                 <Phone size={16} className="text-[#2E7D32] flex-shrink-0" />
-                <span>+46 707 40 20 80</span>
+                <span>070 740 20 80</span>
               </a>
               <a
                 href="mailto:info@karlacleaningcrew.se"
